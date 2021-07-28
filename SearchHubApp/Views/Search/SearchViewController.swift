@@ -13,7 +13,7 @@ final class SearchViewController: UIViewController {
     
     // MARK: - Variables
     
-    private let contentView: some View = Text("Test")
+    private lazy var contentView: some View = SearchContentView()
     
     // MARK: - Life Cycle
     

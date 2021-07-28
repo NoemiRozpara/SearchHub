@@ -18,6 +18,7 @@
 		78F4A23126B1AD8A00FE676F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23026B1AD8A00FE676F /* SearchViewController.swift */; };
 		78F4A23326B1AE1400FE676F /* UIViewController+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */; };
 		78F4A23626B1B04200FE676F /* FacadeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23526B1B04200FE676F /* FacadeProtocol.swift */; };
+		78F4A23D26B1B48900FE676F /* SearchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23C26B1B48900FE676F /* SearchContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		78F4A23026B1AD8A00FE676F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SwiftUI.swift"; sourceTree = "<group>"; };
 		78F4A23526B1B04200FE676F /* FacadeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacadeProtocol.swift; sourceTree = "<group>"; };
+		78F4A23C26B1B48900FE676F /* SearchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +107,13 @@
 		78F4A1F826B1A22100FE676F /* SearchHubApp */ = {
 			isa = PBXGroup;
 			children = (
+				78F4A23826B1B41F00FE676F /* Views */,
 				78F4A23426B1AFE800FE676F /* Extensions */,
 				78F4A22D26B1AA7E00FE676F /* Coordinator */,
 				78F4A1F926B1A22100FE676F /* AppDelegate.swift */,
 				78F4A20226B1A22200FE676F /* Assets.xcassets */,
 				78F4A20426B1A22200FE676F /* LaunchScreen.storyboard */,
 				78F4A20726B1A22200FE676F /* Info.plist */,
-				78F4A23026B1AD8A00FE676F /* SearchViewController.swift */,
 			);
 			path = SearchHubApp;
 			sourceTree = "<group>";
@@ -151,6 +153,23 @@
 				78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		78F4A23826B1B41F00FE676F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				78F4A23926B1B42500FE676F /* Search */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		78F4A23926B1B42500FE676F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				78F4A23026B1AD8A00FE676F /* SearchViewController.swift */,
+				78F4A23C26B1B48900FE676F /* SearchContentView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +307,7 @@
 				78F4A22F26B1AACD00FE676F /* Facade.swift in Sources */,
 				78F4A22A26B1A8FE00FE676F /* CoordinatorProtocol.swift in Sources */,
 				78F4A23626B1B04200FE676F /* FacadeProtocol.swift in Sources */,
+				78F4A23D26B1B48900FE676F /* SearchContentView.swift in Sources */,
 				78F4A22C26B1A92D00FE676F /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
