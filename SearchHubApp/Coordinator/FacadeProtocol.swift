@@ -8,5 +8,5 @@
 import UIKit
 
 protocol FacadeProtocol {
-    func makeSearchView() -> UIViewController
+    func makeSearchView(coordinatorDelegate: ApplicationCoordinatorDelegate) -> UIViewController
 }

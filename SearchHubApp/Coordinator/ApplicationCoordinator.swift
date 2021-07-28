@@ -26,7 +26,13 @@ class ApplicationCoordinator: CoordinatorProtocol {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
         
-        let searchView = facade.makeSearchView()
+        let searchView = facade.makeSearchView(coordinatorDelegate: self)
         rootViewController.pushViewController(searchView, animated: false)
+    }
+}
+
+extension ApplicationCoordinator: ApplicationCoordinatorDelegate {
+    func openRepository(using url: URL) {
+        print("open \(url)")
     }
 }

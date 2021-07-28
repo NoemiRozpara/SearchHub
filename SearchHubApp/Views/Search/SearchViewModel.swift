@@ -22,17 +22,21 @@ class SearchViewModel: ObservableObject {
     
     private let model: SearchModel
     
-    //    let coordinator: CoordinatorModel
+    private weak var coordinatorDelegate: ApplicationCoordinatorDelegate?
     
-    init(model: SearchModel) {
+    init(
+        model: SearchModel,
+        coordinatorDelegate: ApplicationCoordinatorDelegate?
+    ) {
         self.model = model
+        self.coordinatorDelegate = coordinatorDelegate
         results = (1 ... 10).map { _ in
             repositoryMock(id: "\(UUID().hashValue)")
         }
     }
     
     func showDetails(using url: URL) {
-//        coordinator.open(url)
+        coordinatorDelegate?.openRepository(using: url)
     }
     
     func loadMore() {

@@ -53,7 +53,10 @@ struct SearchContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         SearchContentView(
-            viewModel: SearchViewModel(model: SearchModel())
+            viewModel: SearchViewModel(
+                model: SearchModel(),
+                coordinatorDelegate: nil
+            )
         ).environmentObject(Theme())
     }
 }
