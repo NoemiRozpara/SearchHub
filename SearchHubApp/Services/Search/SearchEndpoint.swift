@@ -21,10 +21,9 @@ struct Repository: Identifiable, Codable {
     let fullName: String
     let owner: Owner
     let `private`: Bool
-    let htmlUrl: String
     let description: String
     let fork: Bool
-    let url: String
+    let url: URL
     let createdAt: Date
     let updatedAt: Date
     let pushedAt: Date

@@ -31,6 +31,7 @@
 		78F4A25726B1B9DE00FE676F /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25526B1B9B500FE676F /* RepositoryMock.swift */; };
 		78F4A25926B1BAEF00FE676F /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25826B1BAEF00FE676F /* SearchModel.swift */; };
 		78F4A25B26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25A26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift */; };
+		78F4A25D26B1C32500FE676F /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25C26B1C32500FE676F /* Logo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		78F4A25526B1B9B500FE676F /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
 		78F4A25826B1BAEF00FE676F /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		78F4A25A26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		78F4A25C26B1C32500FE676F /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				78F4A24D26B1B84200FE676F /* SearchResultView.swift */,
+				78F4A25C26B1C32500FE676F /* Logo.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				78F4A25926B1BAEF00FE676F /* SearchModel.swift in Sources */,
 				78F4A23126B1AD8A00FE676F /* SearchViewController.swift in Sources */,
 				78F4A24E26B1B84200FE676F /* SearchResultView.swift in Sources */,
+				78F4A25D26B1C32500FE676F /* Logo.swift in Sources */,
 				78F4A1FA26B1A22100FE676F /* AppDelegate.swift in Sources */,
 				78F4A25226B1B92000FE676F /* SearchEndpoint.swift in Sources */,
 				78F4A22F26B1AACD00FE676F /* Facade.swift in Sources */,

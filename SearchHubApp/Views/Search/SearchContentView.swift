@@ -20,26 +20,12 @@ struct SearchContentView: View {
     
     var body: some View {
         VStack {
-            Text("SearchHub")
-                .font(.headline)
-                .foregroundColor(theme.colorPalette.accent)
+            Logo()
             SearchField(query: $viewModel.query)
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack {
                     ForEach(viewModel.results, id: \.id) { result in
-                        URL(string: result.url) != nil
-                            ? Button(action: {
-                                viewModel.showDetails(using: URL(string: result.url)!)
-                            }, label: {
-                                SearchResultView(result: result)
-                                    .listRowInsets(.init())
-                                    .onAppear {
-                                        if result.id == viewModel.results.last?.id {
-                                            viewModel.loadMore()
-                                        }
-                                    }
-                            }).id(UUID())
-                            : nil
+                        makeSearchResult(using: result).id(UUID())
                     }
                     if viewModel.isLoading {
                         ProgressView()
@@ -47,6 +33,20 @@ struct SearchContentView: View {
                 }
             }
         }
+    }
+    
+    @ViewBuilder private func makeSearchResult(using repository: Repository) -> some View {
+        Button(action: {
+            viewModel.showDetails(using: repository.url)
+        }, label: {
+            SearchResultView(result: repository)
+                .listRowInsets(.init())
+                .onAppear {
+                    if repository.id == viewModel.results.last?.id {
+                        viewModel.loadMore()
+                    }
+                }
+        })
     }
 }
 

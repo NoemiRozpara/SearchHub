@@ -19,10 +19,9 @@ func repositoryMock(id: String) -> Repository {
             url: ""
         ),
         private: false,
-        htmlUrl: "",
         description: "Pizza is love, pizza is life, lorem ipsum is not long enough, tratata",
         fork: false,
-        url: "http://apple.com",
+        url: URL(string: "http://apple.com")!,
         createdAt: Date(),
         updatedAt: Date(),
         pushedAt: Date(),
