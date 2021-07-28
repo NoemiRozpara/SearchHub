@@ -11,7 +11,16 @@ import SafariServices
 class ApplicationCoordinator: CoordinatorProtocol {
     
     let window: UIWindow
-    let rootViewController: UINavigationController
+    
+    private lazy var rootViewController: UIViewController = {
+        facade.makeSearchView(coordinatorDelegate: self)
+    }()
+    
+    private lazy var navigationController: UINavigationController = {
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        return navigationController
+    }()
+    
     private let facade: FacadeProtocol
     
     init(
@@ -20,21 +29,19 @@ class ApplicationCoordinator: CoordinatorProtocol {
     ) {
         self.facade = facade
         self.window = window
-        rootViewController = UINavigationController()
     }
     
     func start() {
-        window.rootViewController = rootViewController
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        let searchView = facade.makeSearchView(coordinatorDelegate: self)
-        rootViewController.pushViewController(searchView, animated: false)
+        navigationController.setNavigationBarHidden(true, animated: false)
     }
 }
 
 extension ApplicationCoordinator: ApplicationCoordinatorDelegate {
     func openDetails(using url: URL) {
         let detailsView = facade.makeDetailsView(using: url)
-        rootViewController.present(detailsView, animated: true, completion: nil)
+        navigationController.present(detailsView, animated: true)
     }
 }
