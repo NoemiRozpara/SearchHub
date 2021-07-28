@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		78F4A1FA26B1A22100FE676F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A1F926B1A22100FE676F /* AppDelegate.swift */; };
-		78F4A1FC26B1A22100FE676F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A1FB26B1A22100FE676F /* SceneDelegate.swift */; };
 		78F4A20326B1A22200FE676F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F4A20226B1A22200FE676F /* Assets.xcassets */; };
 		78F4A20626B1A22200FE676F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F4A20426B1A22200FE676F /* LaunchScreen.storyboard */; };
 		78F4A21126B1A22200FE676F /* SearchHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A21026B1A22200FE676F /* SearchHubAppTests.swift */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		78F4A1F626B1A22100FE676F /* SearchHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F4A1F926B1A22100FE676F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78F4A1FB26B1A22100FE676F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		78F4A20226B1A22200FE676F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78F4A20526B1A22200FE676F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78F4A20726B1A22200FE676F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				78F4A23426B1AFE800FE676F /* Extensions */,
 				78F4A22D26B1AA7E00FE676F /* Coordinator */,
 				78F4A1F926B1A22100FE676F /* AppDelegate.swift */,
-				78F4A1FB26B1A22100FE676F /* SceneDelegate.swift */,
 				78F4A20226B1A22200FE676F /* Assets.xcassets */,
 				78F4A20426B1A22200FE676F /* LaunchScreen.storyboard */,
 				78F4A20726B1A22200FE676F /* Info.plist */,
@@ -292,7 +289,6 @@
 				78F4A22A26B1A8FE00FE676F /* CoordinatorProtocol.swift in Sources */,
 				78F4A23626B1B04200FE676F /* FacadeProtocol.swift in Sources */,
 				78F4A22C26B1A92D00FE676F /* ApplicationCoordinator.swift in Sources */,
-				78F4A1FC26B1A22100FE676F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -445,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -470,7 +466,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = noemirozpara.SearchHubApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -489,7 +485,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = noemirozpara.SearchHubApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
