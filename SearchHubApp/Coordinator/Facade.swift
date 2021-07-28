@@ -9,6 +9,8 @@ import UIKit
 
 class Facade: FacadeProtocol {
     func makeSearchView() -> UIViewController {
-        SearchViewController()
+        let model: SearchModel = SearchModel()
+        let viewModel: SearchViewModel = SearchViewModel(model: model)
+        return SearchViewController(viewModel: viewModel)
     }
 }

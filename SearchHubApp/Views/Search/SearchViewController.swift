@@ -12,8 +12,11 @@ import SwiftUI
 final class SearchViewController: UIViewController {
     
     // MARK: - Variables
+    private let viewModel: SearchViewModel
     
-    private lazy var contentView: some View = SearchContentView()
+    private lazy var contentView: some View = {
+        SearchContentView(viewModel: viewModel).environmentObject(Theme())
+    }()
     
     // MARK: - Life Cycle
     
@@ -21,7 +24,8 @@ final class SearchViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    required init() {
+    required init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     

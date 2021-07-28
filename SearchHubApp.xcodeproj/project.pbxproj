@@ -29,6 +29,7 @@
 		78F4A25226B1B92000FE676F /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25126B1B92000FE676F /* SearchEndpoint.swift */; };
 		78F4A25626B1B9B500FE676F /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25526B1B9B500FE676F /* RepositoryMock.swift */; };
 		78F4A25726B1B9DE00FE676F /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25526B1B9B500FE676F /* RepositoryMock.swift */; };
+		78F4A25926B1BAEF00FE676F /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25826B1BAEF00FE676F /* SearchModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		78F4A24D26B1B84200FE676F /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		78F4A25126B1B92000FE676F /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		78F4A25526B1B9B500FE676F /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
+		78F4A25826B1BAEF00FE676F /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				78F4A23026B1AD8A00FE676F /* SearchViewController.swift */,
 				78F4A23C26B1B48900FE676F /* SearchContentView.swift */,
 				78F4A24A26B1B7C000FE676F /* SearchViewModel.swift */,
+				78F4A25826B1BAEF00FE676F /* SearchModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				78F4A24526B1B62A00FE676F /* LabelWithIcon.swift in Sources */,
 				78F4A24026B1B53100FE676F /* Theme.swift in Sources */,
 				78F4A23326B1AE1400FE676F /* UIViewController+SwiftUI.swift in Sources */,
+				78F4A25926B1BAEF00FE676F /* SearchModel.swift in Sources */,
 				78F4A23126B1AD8A00FE676F /* SearchViewController.swift in Sources */,
 				78F4A24E26B1B84200FE676F /* SearchResultView.swift in Sources */,
 				78F4A1FA26B1A22100FE676F /* AppDelegate.swift in Sources */,
