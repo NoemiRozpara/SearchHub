@@ -6,5 +6,16 @@
 //
 
 import Foundation
+import Combine
 
-struct SearchModel {}
+struct SearchModel {
+    private let searchService: SearchService
+    
+    init(searchService: SearchService) {
+        self.searchService = searchService
+    }
+ 
+    func search(_ query: String) -> AnyPublisher<SearchEndpoint.Response, Error> {
+        searchService.search(query: query)
+    }
+}
