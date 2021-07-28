@@ -36,7 +36,7 @@ class SearchViewModel: ObservableObject {
     }
     
     func showDetails(using url: URL) {
-        coordinatorDelegate?.openRepository(using: url)
+        coordinatorDelegate?.openDetails(using: url)
     }
     
     func loadMore() {

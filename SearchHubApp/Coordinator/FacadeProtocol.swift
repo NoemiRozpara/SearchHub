@@ -9,4 +9,6 @@ import UIKit
 
 protocol FacadeProtocol {
     func makeSearchView(coordinatorDelegate: ApplicationCoordinatorDelegate) -> UIViewController
+    
+    func makeDetailsView(using url: URL) -> UIViewController
 }

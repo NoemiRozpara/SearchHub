@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class Facade: FacadeProtocol {
     func makeSearchView(coordinatorDelegate: ApplicationCoordinatorDelegate) -> UIViewController {
@@ -15,5 +16,11 @@ class Facade: FacadeProtocol {
             coordinatorDelegate: coordinatorDelegate
         )
         return SearchViewController(viewModel: viewModel)
+    }
+    
+    func makeDetailsView(using url: URL) -> UIViewController {
+        let configuration = SFSafariViewController.Configuration()
+        configuration.entersReaderIfAvailable = true
+        return SFSafariViewController(url: url, configuration: configuration)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ApplicationCoordinator: CoordinatorProtocol {
     
@@ -32,7 +33,8 @@ class ApplicationCoordinator: CoordinatorProtocol {
 }
 
 extension ApplicationCoordinator: ApplicationCoordinatorDelegate {
-    func openRepository(using url: URL) {
-        print("open \(url)")
+    func openDetails(using url: URL) {
+        let detailsView = facade.makeDetailsView(using: url)
+        rootViewController.present(detailsView, animated: true, completion: nil)
     }
 }

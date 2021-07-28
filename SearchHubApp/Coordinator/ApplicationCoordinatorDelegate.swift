@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ApplicationCoordinatorDelegate: AnyObject {
-    func openRepository(using url: URL)
+    func openDetails(using url: URL)
 }
