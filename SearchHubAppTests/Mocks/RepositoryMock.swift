@@ -12,7 +12,7 @@ func repositoryMock(id: String) -> Repository {
         id: id,
         name: "Cats",
         fullName: "eddy/Cats",
-        owner: Owner(
+        owner: Repository.Owner(
             login: "eddy", id: 1,
             avatarUrl: "",
             gravatarId: "",

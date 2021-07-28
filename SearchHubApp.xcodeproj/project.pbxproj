@@ -32,6 +32,10 @@
 		78F4A25926B1BAEF00FE676F /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25826B1BAEF00FE676F /* SearchModel.swift */; };
 		78F4A25B26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25A26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift */; };
 		78F4A25D26B1C32500FE676F /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25C26B1C32500FE676F /* Logo.swift */; };
+		78F4A26026B1D17300FE676F /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25F26B1D17300FE676F /* EndpointProtocol.swift */; };
+		78F4A26226B1D32300FE676F /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26126B1D32300FE676F /* URLRequestFactory.swift */; };
+		78F4A26426B1D5B600FE676F /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26326B1D5B600FE676F /* RepositoryModel.swift */; };
+		78F4A26626B1D61900FE676F /* String+LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26526B1D61900FE676F /* String+LocalizedError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,10 @@
 		78F4A25826B1BAEF00FE676F /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		78F4A25A26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		78F4A25C26B1C32500FE676F /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		78F4A25F26B1D17300FE676F /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
+		78F4A26126B1D32300FE676F /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
+		78F4A26326B1D5B600FE676F /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		78F4A26526B1D61900FE676F /* String+LocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizedError.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,15 +140,15 @@
 		78F4A1F826B1A22100FE676F /* SearchHubApp */ = {
 			isa = PBXGroup;
 			children = (
+				78F4A22D26B1AA7E00FE676F /* Coordinator */,
+				78F4A23426B1AFE800FE676F /* Extensions */,
 				78F4A24F26B1B8FD00FE676F /* Services */,
 				78F4A23E26B1B51400FE676F /* UILibrary */,
 				78F4A23826B1B41F00FE676F /* Views */,
-				78F4A23426B1AFE800FE676F /* Extensions */,
-				78F4A22D26B1AA7E00FE676F /* Coordinator */,
 				78F4A1F926B1A22100FE676F /* AppDelegate.swift */,
 				78F4A20226B1A22200FE676F /* Assets.xcassets */,
-				78F4A20426B1A22200FE676F /* LaunchScreen.storyboard */,
 				78F4A20726B1A22200FE676F /* Info.plist */,
+				78F4A20426B1A22200FE676F /* LaunchScreen.storyboard */,
 			);
 			path = SearchHubApp;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 			children = (
 				78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */,
 				78F4A24126B1B54C00FE676F /* Color+Hex.swift */,
+				78F4A26526B1D61900FE676F /* String+LocalizedError.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				78F4A25026B1B90C00FE676F /* Search */,
+				78F4A25F26B1D17300FE676F /* EndpointProtocol.swift */,
+				78F4A26126B1D32300FE676F /* URLRequestFactory.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -246,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				78F4A25126B1B92000FE676F /* SearchEndpoint.swift */,
+				78F4A26326B1D5B600FE676F /* RepositoryModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -395,11 +407,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F4A24526B1B62A00FE676F /* LabelWithIcon.swift in Sources */,
+				78F4A26626B1D61900FE676F /* String+LocalizedError.swift in Sources */,
 				78F4A24026B1B53100FE676F /* Theme.swift in Sources */,
 				78F4A23326B1AE1400FE676F /* UIViewController+SwiftUI.swift in Sources */,
 				78F4A25926B1BAEF00FE676F /* SearchModel.swift in Sources */,
+				78F4A26226B1D32300FE676F /* URLRequestFactory.swift in Sources */,
+				78F4A26426B1D5B600FE676F /* RepositoryModel.swift in Sources */,
 				78F4A23126B1AD8A00FE676F /* SearchViewController.swift in Sources */,
 				78F4A24E26B1B84200FE676F /* SearchResultView.swift in Sources */,
+				78F4A26026B1D17300FE676F /* EndpointProtocol.swift in Sources */,
 				78F4A25D26B1C32500FE676F /* Logo.swift in Sources */,
 				78F4A1FA26B1A22100FE676F /* AppDelegate.swift in Sources */,
 				78F4A25226B1B92000FE676F /* SearchEndpoint.swift in Sources */,
