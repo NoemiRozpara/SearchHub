@@ -15,6 +15,10 @@
 		78F4A21C26B1A22200FE676F /* SearchHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A21B26B1A22200FE676F /* SearchHubAppUITests.swift */; };
 		78F4A22A26B1A8FE00FE676F /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A22926B1A8FE00FE676F /* CoordinatorProtocol.swift */; };
 		78F4A22C26B1A92D00FE676F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A22B26B1A92D00FE676F /* ApplicationCoordinator.swift */; };
+		78F4A22F26B1AACD00FE676F /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A22E26B1AACD00FE676F /* Facade.swift */; };
+		78F4A23126B1AD8A00FE676F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23026B1AD8A00FE676F /* SearchViewController.swift */; };
+		78F4A23326B1AE1400FE676F /* UIViewController+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */; };
+		78F4A23626B1B04200FE676F /* FacadeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23526B1B04200FE676F /* FacadeProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		78F4A21D26B1A22200FE676F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78F4A22926B1A8FE00FE676F /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		78F4A22B26B1A92D00FE676F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		78F4A22E26B1AACD00FE676F /* Facade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
+		78F4A23026B1AD8A00FE676F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SwiftUI.swift"; sourceTree = "<group>"; };
+		78F4A23526B1B04200FE676F /* FacadeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacadeProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +107,14 @@
 		78F4A1F826B1A22100FE676F /* SearchHubApp */ = {
 			isa = PBXGroup;
 			children = (
+				78F4A23426B1AFE800FE676F /* Extensions */,
 				78F4A22D26B1AA7E00FE676F /* Coordinator */,
 				78F4A1F926B1A22100FE676F /* AppDelegate.swift */,
 				78F4A1FB26B1A22100FE676F /* SceneDelegate.swift */,
 				78F4A20226B1A22200FE676F /* Assets.xcassets */,
 				78F4A20426B1A22200FE676F /* LaunchScreen.storyboard */,
 				78F4A20726B1A22200FE676F /* Info.plist */,
+				78F4A23026B1AD8A00FE676F /* SearchViewController.swift */,
 			);
 			path = SearchHubApp;
 			sourceTree = "<group>";
@@ -132,8 +142,18 @@
 			children = (
 				78F4A22926B1A8FE00FE676F /* CoordinatorProtocol.swift */,
 				78F4A22B26B1A92D00FE676F /* ApplicationCoordinator.swift */,
+				78F4A22E26B1AACD00FE676F /* Facade.swift */,
+				78F4A23526B1B04200FE676F /* FacadeProtocol.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		78F4A23426B1AFE800FE676F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F4A23326B1AE1400FE676F /* UIViewController+SwiftUI.swift in Sources */,
+				78F4A23126B1AD8A00FE676F /* SearchViewController.swift in Sources */,
 				78F4A1FA26B1A22100FE676F /* AppDelegate.swift in Sources */,
+				78F4A22F26B1AACD00FE676F /* Facade.swift in Sources */,
 				78F4A22A26B1A8FE00FE676F /* CoordinatorProtocol.swift in Sources */,
+				78F4A23626B1B04200FE676F /* FacadeProtocol.swift in Sources */,
 				78F4A22C26B1A92D00FE676F /* ApplicationCoordinator.swift in Sources */,
 				78F4A1FC26B1A22100FE676F /* SceneDelegate.swift in Sources */,
 			);

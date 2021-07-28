@@ -11,8 +11,13 @@ class ApplicationCoordinator: CoordinatorProtocol {
     
     let window: UIWindow
     let rootViewController: UINavigationController
+    private let facade: FacadeProtocol
     
-    init(window: UIWindow) {
+    init(
+        window: UIWindow,
+        facade: FacadeProtocol = Facade()
+    ) {
+        self.facade = facade
         self.window = window
         rootViewController = UINavigationController()
     }
@@ -20,5 +25,8 @@ class ApplicationCoordinator: CoordinatorProtocol {
     func start() {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
+        
+        let searchView = facade.makeSearchView()
+        rootViewController.pushViewController(searchView, animated: false)
     }
 }
