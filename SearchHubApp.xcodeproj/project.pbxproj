@@ -36,6 +36,8 @@
 		78F4A26226B1D32300FE676F /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26126B1D32300FE676F /* URLRequestFactory.swift */; };
 		78F4A26426B1D5B600FE676F /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26326B1D5B600FE676F /* RepositoryModel.swift */; };
 		78F4A26626B1D61900FE676F /* String+LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26526B1D61900FE676F /* String+LocalizedError.swift */; };
+		78F4A26826B1D70300FE676F /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26726B1D70300FE676F /* SearchService.swift */; };
+		78F4A26A26B1D87300FE676F /* JsonDecoder+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26926B1D87300FE676F /* JsonDecoder+Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		78F4A26126B1D32300FE676F /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
 		78F4A26326B1D5B600FE676F /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		78F4A26526B1D61900FE676F /* String+LocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizedError.swift"; sourceTree = "<group>"; };
+		78F4A26726B1D70300FE676F /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		78F4A26926B1D87300FE676F /* JsonDecoder+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JsonDecoder+Formatter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 				78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */,
 				78F4A24126B1B54C00FE676F /* Color+Hex.swift */,
 				78F4A26526B1D61900FE676F /* String+LocalizedError.swift */,
+				78F4A26926B1D87300FE676F /* JsonDecoder+Formatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			children = (
 				78F4A25126B1B92000FE676F /* SearchEndpoint.swift */,
 				78F4A26326B1D5B600FE676F /* RepositoryModel.swift */,
+				78F4A26726B1D70300FE676F /* SearchService.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -425,9 +431,11 @@
 				78F4A24B26B1B7C000FE676F /* SearchViewModel.swift in Sources */,
 				78F4A25726B1B9DE00FE676F /* RepositoryMock.swift in Sources */,
 				78F4A22A26B1A8FE00FE676F /* CoordinatorProtocol.swift in Sources */,
+				78F4A26A26B1D87300FE676F /* JsonDecoder+Formatter.swift in Sources */,
 				78F4A23626B1B04200FE676F /* FacadeProtocol.swift in Sources */,
 				78F4A24926B1B67100FE676F /* SearchField.swift in Sources */,
 				78F4A23D26B1B48900FE676F /* SearchContentView.swift in Sources */,
+				78F4A26826B1D70300FE676F /* SearchService.swift in Sources */,
 				78F4A25B26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift in Sources */,
 				78F4A22C26B1A92D00FE676F /* ApplicationCoordinator.swift in Sources */,
 			);
