@@ -19,7 +19,7 @@ struct SearchResultView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.subheadline)
                     .foregroundColor(theme.colorPalette.primaryText)
-                Text(result.description)
+                Text(result.description ?? " ")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .lineLimit(1)
                     .font(.body)
@@ -33,10 +33,12 @@ struct SearchResultView: View {
                         text: "\(result.watchersCount)",
                         iconName: "person.fill"
                     )
-                    LabelWithIcon(
-                        text: result.language,
-                        iconName: "gearshape.fill"
-                    )
+                    result.language != nil
+                        ? LabelWithIcon(
+                            text: result.language!,
+                            iconName: "gearshape.fill"
+                        )
+                        : nil
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }

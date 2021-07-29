@@ -39,7 +39,7 @@ struct SearchContentView: View {
     
     @ViewBuilder private func makeSearchResult(using repository: Repository) -> some View {
         Button(action: {
-            viewModel.showDetails(using: repository.url)
+            viewModel.showDetails(using: repository.htmlUrl)
         }, label: {
             SearchResultView(result: repository)
                 .listRowInsets(.init())

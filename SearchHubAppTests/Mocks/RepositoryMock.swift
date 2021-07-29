@@ -21,7 +21,7 @@ func makeRepositoryMock(id: Int) -> Repository {
         private: false,
         description: "Pizza is love, pizza is life, lorem ipsum is not long enough, tratata",
         fork: false,
-        url: URL(string: "http://apple.com")!,
+        htmlUrl: URL(string: "http://apple.com")!,
         createdAt: Date(),
         updatedAt: Date(),
         pushedAt: Date(),

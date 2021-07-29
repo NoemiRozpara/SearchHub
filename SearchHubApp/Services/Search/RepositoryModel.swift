@@ -21,15 +21,15 @@ struct Repository: Identifiable, Codable {
     let fullName: String
     let owner: Owner
     let `private`: Bool
-    let description: String
+    let description: String?
     let fork: Bool
-    let url: URL
+    let htmlUrl: URL
     let createdAt: Date
     let updatedAt: Date
     let pushedAt: Date
     let stargazersCount: Int
     let watchersCount: Int
-    let language: String
+    let language: String?
     let forksCount: Int
     let watchers: Int
     let archived: Bool
