@@ -13,13 +13,16 @@ struct Icon: View {
     
     let name: String
     let size: CGFloat
+    let customColor: Color?
     
     init(
         name: String,
-        size: CGFloat = 14
+        size: CGFloat = 14,
+        customColor: Color? = nil
     ) {
         self.name = name
         self.size = size
+        self.customColor = customColor
     }
     
     var body: some View {
@@ -27,12 +30,12 @@ struct Icon: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: size, height: size, alignment: .center)
-            .foregroundColor(theme.colorPalette.accent)
+            .foregroundColor(customColor ?? theme.colorPalette.accent)
     }
 }
 
 struct Icon_Previews: PreviewProvider {
     static var previews: some View {
-        Icon(name: "lightbulb.fill").environmentObject(Theme())
+        Icon(name: "star.fill").environmentObject(Theme())
     }
 }

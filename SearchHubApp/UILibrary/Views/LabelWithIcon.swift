@@ -12,13 +12,16 @@ struct LabelWithIcon: View {
     
     let text: String
     let iconName: String
+    let primary: Bool
     
     init(
         text: String,
-        iconName: String
+        iconName: String,
+        primary: Bool = true
     ) {
         self.text = text
         self.iconName = iconName
+        self.primary = primary
     }
     
     var body: some View {
@@ -26,7 +29,11 @@ struct LabelWithIcon: View {
             Icon(name: iconName)
             Text(text)
                 .font(.caption)
-                .foregroundColor(theme.colorPalette.secondaryText)
+                .foregroundColor(
+                    primary
+                    ? theme.colorPalette.primaryText
+                    : theme.colorPalette.secondaryText
+                )
         }
     }
 }
@@ -38,9 +45,6 @@ struct LabelWithIcon_Previews: PreviewProvider {
         LabelWithIcon(
             text: "Lasagna is the best",
             iconName: "heart.fill"
-        )
-        .background(
-            theme.colorPalette.background
         )
         .environmentObject(theme)
     }
