@@ -13,9 +13,9 @@ class SearchViewModel: ObservableObject {
     
     @Published public var query: String = ""
     
-    @Published var results: [Repository]
+    @Published var results: [Repository] = []
     
-    @Published var isLoading = true
+    @Published var isLoading = false
     
     @Published var error: String?
     
@@ -35,9 +35,6 @@ class SearchViewModel: ObservableObject {
     ) {
         self.model = model
         self.coordinatorDelegate = coordinatorDelegate
-        results = (1 ... 10).map { _ in
-            makeRepositoryMock(id: "\(UUID().hashValue)")
-        }
     }
     
     func showDetails(using url: URL) {
@@ -48,6 +45,7 @@ class SearchViewModel: ObservableObject {
         error = nil
         isLoading = true
         model.search(query)
+            .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { [weak self] completion in
                     guard let self = self else {
@@ -57,6 +55,8 @@ class SearchViewModel: ObservableObject {
                     self.isLoading = false
                     switch completion {
                     case .failure(let error):
+                        print(error)
+                        self.results = []
                         self.error = error.localizedDescription
                     case .finished:
                         self.error = nil
