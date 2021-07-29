@@ -126,6 +126,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7807D22826B3389200631A24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78F4A26326B1D5B600FE676F /* RepositoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		78F4A1ED26B1A22100FE676F = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +157,7 @@
 		78F4A1F826B1A22100FE676F /* SearchHubApp */ = {
 			isa = PBXGroup;
 			children = (
+				7807D22826B3389200631A24 /* Models */,
 				78F4A22D26B1AA7E00FE676F /* Coordinator */,
 				78F4A23426B1AFE800FE676F /* Extensions */,
 				78F4A24F26B1B8FD00FE676F /* Services */,
@@ -267,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				78F4A25126B1B92000FE676F /* SearchEndpoint.swift */,
-				78F4A26326B1D5B600FE676F /* RepositoryModel.swift */,
 				78F4A26726B1D70300FE676F /* SearchService.swift */,
 			);
 			path = Search;
