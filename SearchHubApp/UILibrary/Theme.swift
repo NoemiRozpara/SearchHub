@@ -18,7 +18,7 @@ public class Theme: ObservableObject {
         public private(set) var accent: Color
         
         public init(
-            primaryText: Color = Color(hex: "fff"),
+            primaryText: Color = Color(hex: "000"),
             secondaryText: Color = Color(hex: "fff"),
             background: Color = Color(hex: "26547c"),
             accent: Color = Color(hex: "06d6a0")
