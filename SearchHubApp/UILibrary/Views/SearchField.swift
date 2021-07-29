@@ -58,7 +58,7 @@ struct SearchField: View {
                 .onTapGesture {
                     isEditing = true
                 }
-                
+            
             
             if isEditing {
                 Button(action: clearQueryAndResign) {
@@ -71,7 +71,6 @@ struct SearchField: View {
     }
     
     private func clearQueryAndResign() {
-        query.wrappedValue = ""
         UIApplication.shared
             .sendAction(
                 #selector(UIResponder.resignFirstResponder),
@@ -79,6 +78,9 @@ struct SearchField: View {
                 from: nil,
                 for: nil
             )
+        query.wrappedValue = ""
+        isEditing = false
+        
     }
 }
 
