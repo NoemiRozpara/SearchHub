@@ -10,7 +10,7 @@ import SafariServices
 
 class Facade: FacadeProtocol {
     func makeSearchView(coordinatorDelegate: ApplicationCoordinatorDelegate) -> UIViewController {
-        let model: SearchModel = SearchModel()
+        let model: SearchModel = SearchModel(searchService: SearchService())
         let viewModel: SearchViewModel = SearchViewModel(
             model: model,
             coordinatorDelegate: coordinatorDelegate

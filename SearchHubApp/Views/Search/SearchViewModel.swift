@@ -36,7 +36,7 @@ class SearchViewModel: ObservableObject {
         self.model = model
         self.coordinatorDelegate = coordinatorDelegate
         results = (1 ... 10).map { _ in
-            repositoryMock(id: "\(UUID().hashValue)")
+            makeRepositoryMock(id: "\(UUID().hashValue)")
         }
     }
     
@@ -79,9 +79,9 @@ class SearchViewModel: ObservableObject {
     }
     
     func loadMore() {
-        let newItems = (1 ... 10).map { _ in
-            repositoryMock(id: "\(UUID().hashValue)")
-        }
-        results.append(contentsOf: newItems)
+//        let newItems = (1 ... 10).map { _ in
+//            repositoryMock(id: "\(UUID().hashValue)")
+//        }
+//        results.append(contentsOf: newItems)
     }
 }

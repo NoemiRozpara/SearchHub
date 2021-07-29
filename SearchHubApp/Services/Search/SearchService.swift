@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-struct SearchService {
+protocol SearchServiceProtocol {
+    func search(query: String) -> AnyPublisher<SearchEndpoint.Response, Error>
+}
+
+struct SearchService: SearchServiceProtocol {
     
     private let session: URLSession
     private let decoder: JSONDecoder

@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct SearchField: View {
-    @Binding var query: String
+    var query: Binding<String>
     
     @State private var isEditing = false
     
+    private let executeSearch: ((String) -> Void)?
+    
+    init(
+        query: Binding<String>,
+        executeSearch: ((String) -> Void)? = nil
+    ) {
+        self.query = query
+        self.executeSearch = executeSearch
+    }
+    
     var body: some View {
         HStack {
-            TextField("Search ...", text: $query)
+            TextField(
+                "Search ...",
+                text: query,
+                onEditingChanged: { isEditing in
+                    self.isEditing = true
+                }, onCommit: {
+                    self.executeSearch?(query.wrappedValue)
+                })
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
@@ -28,9 +45,9 @@ struct SearchField: View {
                                 alignment: .leading
                             )
                             .padding(.leading, 8)
-                        if isEditing && !query.isEmpty {
+                        if isEditing && !query.wrappedValue.isEmpty {
                             Button(action: {
-                                query = ""
+                                query.wrappedValue = ""
                             }) {
                                 Icon(name: "multiply.circle.fill")
                                     .padding(.trailing, 8)
@@ -41,6 +58,7 @@ struct SearchField: View {
                 .onTapGesture {
                     isEditing = true
                 }
+                
             
             if isEditing {
                 Button(action: clearQueryAndResign) {
@@ -53,8 +71,7 @@ struct SearchField: View {
     }
     
     private func clearQueryAndResign() {
-        isEditing = false
-        query = ""
+        query.wrappedValue = ""
         UIApplication.shared
             .sendAction(
                 #selector(UIResponder.resignFirstResponder),
@@ -67,6 +84,9 @@ struct SearchField: View {
 
 struct SearchField_Previews: PreviewProvider {
     static var previews: some View {
-        SearchField(query: .constant("")).environmentObject(Theme())
+        SearchField(
+            query: .constant(""),
+            executeSearch: nil
+        ).environmentObject(Theme())
     }
 }

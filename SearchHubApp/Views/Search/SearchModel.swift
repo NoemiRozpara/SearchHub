@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 struct SearchModel {
-    private let searchService: SearchService
+    private let searchService: SearchServiceProtocol
     
-    init(searchService: SearchService) {
+    init(searchService: SearchServiceProtocol) {
         self.searchService = searchService
     }
  

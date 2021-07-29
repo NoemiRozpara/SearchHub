@@ -21,7 +21,9 @@ struct SearchContentView: View {
     var body: some View {
         VStack {
             Logo()
-            SearchField(query: $viewModel.query)
+            SearchField(query: $viewModel.query) { query in
+                viewModel.search(query)
+            }
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack {
                     ForEach(viewModel.results, id: \.id) { result in
@@ -54,7 +56,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         SearchContentView(
             viewModel: SearchViewModel(
-                model: SearchModel(),
+                model: SearchModel(searchService: SearchServiceMock()),
                 coordinatorDelegate: nil
             )
         ).environmentObject(Theme())
