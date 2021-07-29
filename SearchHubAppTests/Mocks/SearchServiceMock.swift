@@ -12,7 +12,7 @@ struct SearchServiceMock: SearchServiceProtocol {
     func search(query: String) -> AnyPublisher<SearchEndpoint.Response, Error> {
         Result<SearchEndpoint.Response, Error>{
             let items = (1 ... 10).map { _ in
-                makeRepositoryMock(id: "\(UUID().hashValue)")
+                makeRepositoryMock(id: UUID().hashValue)
             }
             return SearchEndpoint.Response(
                 totalCount: 99,

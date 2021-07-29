@@ -16,7 +16,7 @@ struct Repository: Identifiable, Codable {
         let url: String
     }
     
-    let id: String
+    let id: Int
     let name: String
     let fullName: String
     let owner: Owner

@@ -51,7 +51,7 @@ struct SearchResultView: View {
 struct SearchResultView_Previews: PreviewProvider {
     static var previews: some View {
         SearchResultView(
-            result: makeRepositoryMock(id: "123")
+            result: makeRepositoryMock(id: UUID().hashValue)
         )
         .environmentObject(Theme())
     }

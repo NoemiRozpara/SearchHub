@@ -7,7 +7,7 @@
 
 import Foundation
 
-func makeRepositoryMock(id: String) -> Repository {
+func makeRepositoryMock(id: Int) -> Repository {
     Repository(
         id: id,
         name: "Cats",
