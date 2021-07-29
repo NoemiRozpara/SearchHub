@@ -21,7 +21,7 @@ class SearchViewModel: ObservableObject {
     
     private let model: SearchModel
     
-    private weak var coordinatorDelegate: ApplicationCoordinatorDelegate?
+    private weak var coordinatorDelegate: NavigatorProtocol?
     
     private var cancellables: [AnyCancellable] = []
     
@@ -31,7 +31,7 @@ class SearchViewModel: ObservableObject {
     
     init(
         model: SearchModel,
-        coordinatorDelegate: ApplicationCoordinatorDelegate?
+        coordinatorDelegate: NavigatorProtocol?
     ) {
         self.model = model
         self.coordinatorDelegate = coordinatorDelegate
