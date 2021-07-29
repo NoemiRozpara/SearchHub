@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ApplicationCoordinatorDelegate: AnyObject {
+protocol NavigatorProtocol: AnyObject {
     func openDetails(using url: URL)
 }

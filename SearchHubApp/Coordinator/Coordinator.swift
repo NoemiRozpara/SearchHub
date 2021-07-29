@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-class ApplicationCoordinator: CoordinatorProtocol {
+class Coordinator: CoordinatorProtocol {
     
     let window: UIWindow
     
@@ -39,7 +39,7 @@ class ApplicationCoordinator: CoordinatorProtocol {
     }
 }
 
-extension ApplicationCoordinator: ApplicationCoordinatorDelegate {
+extension Coordinator: NavigatorProtocol {
     func openDetails(using url: URL) {
         let detailsView = facade.makeDetailsView(using: url)
         navigationController.present(detailsView, animated: true)

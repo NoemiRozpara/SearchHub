@@ -8,7 +8,5 @@
 import UIKit
 
 protocol CoordinatorProtocol {
-    var window: UIWindow { get }
-    
     func start()
 }

@@ -16,7 +16,7 @@
 		78F4A21126B1A22200FE676F /* SearchHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A21026B1A22200FE676F /* SearchHubAppTests.swift */; };
 		78F4A21C26B1A22200FE676F /* SearchHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A21B26B1A22200FE676F /* SearchHubAppUITests.swift */; };
 		78F4A22A26B1A8FE00FE676F /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A22926B1A8FE00FE676F /* CoordinatorProtocol.swift */; };
-		78F4A22C26B1A92D00FE676F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A22B26B1A92D00FE676F /* ApplicationCoordinator.swift */; };
+		78F4A22C26B1A92D00FE676F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A22B26B1A92D00FE676F /* Coordinator.swift */; };
 		78F4A22F26B1AACD00FE676F /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A22E26B1AACD00FE676F /* Facade.swift */; };
 		78F4A23126B1AD8A00FE676F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23026B1AD8A00FE676F /* SearchViewController.swift */; };
 		78F4A23326B1AE1400FE676F /* UIViewController+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */; };
@@ -33,7 +33,7 @@
 		78F4A25626B1B9B500FE676F /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25526B1B9B500FE676F /* RepositoryMock.swift */; };
 		78F4A25726B1B9DE00FE676F /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25526B1B9B500FE676F /* RepositoryMock.swift */; };
 		78F4A25926B1BAEF00FE676F /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25826B1BAEF00FE676F /* SearchModel.swift */; };
-		78F4A25B26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25A26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift */; };
+		78F4A25B26B1C19F00FE676F /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25A26B1C19F00FE676F /* NavigatorProtocol.swift */; };
 		78F4A25D26B1C32500FE676F /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25C26B1C32500FE676F /* Logo.swift */; };
 		78F4A26026B1D17300FE676F /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25F26B1D17300FE676F /* EndpointProtocol.swift */; };
 		78F4A26226B1D32300FE676F /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26126B1D32300FE676F /* URLRequestFactory.swift */; };
@@ -75,7 +75,7 @@
 		78F4A21B26B1A22200FE676F /* SearchHubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHubAppUITests.swift; sourceTree = "<group>"; };
 		78F4A21D26B1A22200FE676F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78F4A22926B1A8FE00FE676F /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
-		78F4A22B26B1A92D00FE676F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		78F4A22B26B1A92D00FE676F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		78F4A22E26B1AACD00FE676F /* Facade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
 		78F4A23026B1AD8A00FE676F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		78F4A23226B1AE1400FE676F /* UIViewController+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SwiftUI.swift"; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		78F4A25126B1B92000FE676F /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		78F4A25526B1B9B500FE676F /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
 		78F4A25826B1BAEF00FE676F /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
-		78F4A25A26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		78F4A25A26B1C19F00FE676F /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
 		78F4A25C26B1C32500FE676F /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		78F4A25F26B1D17300FE676F /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
 		78F4A26126B1D32300FE676F /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
@@ -194,10 +194,10 @@
 			isa = PBXGroup;
 			children = (
 				78F4A22926B1A8FE00FE676F /* CoordinatorProtocol.swift */,
-				78F4A22B26B1A92D00FE676F /* ApplicationCoordinator.swift */,
+				78F4A22B26B1A92D00FE676F /* Coordinator.swift */,
 				78F4A22E26B1AACD00FE676F /* Facade.swift */,
 				78F4A23526B1B04200FE676F /* FacadeProtocol.swift */,
-				78F4A25A26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift */,
+				78F4A25A26B1C19F00FE676F /* NavigatorProtocol.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -443,8 +443,8 @@
 				78F4A24926B1B67100FE676F /* SearchField.swift in Sources */,
 				78F4A23D26B1B48900FE676F /* SearchContentView.swift in Sources */,
 				78F4A26826B1D70300FE676F /* SearchService.swift in Sources */,
-				78F4A25B26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift in Sources */,
-				78F4A22C26B1A92D00FE676F /* ApplicationCoordinator.swift in Sources */,
+				78F4A25B26B1C19F00FE676F /* NavigatorProtocol.swift in Sources */,
+				78F4A22C26B1A92D00FE676F /* Coordinator.swift in Sources */,
 				7807D22526B2FCD900631A24 /* SearchServiceMock.swift in Sources */,
 				7807D22726B337B200631A24 /* DetailViewController.swift in Sources */,
 			);
