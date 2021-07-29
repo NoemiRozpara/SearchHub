@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7807D22426B2FCAF00631A24 /* SearchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7807D22326B2FCAF00631A24 /* SearchServiceMock.swift */; };
 		7807D22526B2FCD900631A24 /* SearchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7807D22326B2FCAF00631A24 /* SearchServiceMock.swift */; };
+		7807D22726B337B200631A24 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7807D22626B337B200631A24 /* DetailViewController.swift */; };
 		78F4A1FA26B1A22100FE676F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A1F926B1A22100FE676F /* AppDelegate.swift */; };
 		78F4A20326B1A22200FE676F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F4A20226B1A22200FE676F /* Assets.xcassets */; };
 		78F4A20626B1A22200FE676F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F4A20426B1A22200FE676F /* LaunchScreen.storyboard */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		7807D22326B2FCAF00631A24 /* SearchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceMock.swift; sourceTree = "<group>"; };
+		7807D22626B337B200631A24 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		78F4A1F626B1A22100FE676F /* SearchHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F4A1F926B1A22100FE676F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F4A20226B1A22200FE676F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,8 +207,8 @@
 		78F4A23826B1B41F00FE676F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				78F4A25E26B1C8FB00FE676F /* Details */,
 				78F4A23926B1B42500FE676F /* Search */,
+				7807D22626B337B200631A24 /* DetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,13 +280,6 @@
 				7807D22326B2FCAF00631A24 /* SearchServiceMock.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		78F4A25E26B1C8FB00FE676F /* Details */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +438,7 @@
 				78F4A25B26B1C19F00FE676F /* ApplicationCoordinatorDelegate.swift in Sources */,
 				78F4A22C26B1A92D00FE676F /* ApplicationCoordinator.swift in Sources */,
 				7807D22526B2FCD900631A24 /* SearchServiceMock.swift in Sources */,
+				7807D22726B337B200631A24 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
