@@ -72,7 +72,7 @@ class SearchViewModel: ObservableObject {
                     } else {
                         self.results = response.items
                         self.currentPage = 1
-//                        self.totalPages = response.
+//                        self.totalPages = Int( round(response.totalCount / (self.currentPage * 30)))
                     }
                 }
             ).store(in: &cancellables)
