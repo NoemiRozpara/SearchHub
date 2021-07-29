@@ -8,11 +8,7 @@
 import Foundation
 import Combine
 
-protocol SearchServiceProtocol {
-    func search(query: String) -> AnyPublisher<SearchEndpoint.Response, Error>
-}
-
-struct SearchService: SearchServiceProtocol {
+struct SearchService {
     
     private let session: URLSession
     private let decoder: JSONDecoder
@@ -21,8 +17,20 @@ struct SearchService: SearchServiceProtocol {
         self.session = session
         decoder = JSONDecoder.withFormatters()
     }
-    
+}
+
+extension SearchService: SearchServiceProtocol {
     func search(query: String) -> AnyPublisher<SearchEndpoint.Response, Error> {
+        executeSearch(query: query)
+    }
+    
+    func loadMore(query: String, page: Int) -> AnyPublisher<SearchEndpoint.Response, Error> {
+        executeSearch(query: query, page: page)
+    }
+}
+
+private extension SearchService {
+    func executeSearch(query: String, page: Int = 1) -> AnyPublisher<SearchEndpoint.Response, Error> {
         do {
             let request = try SearchEndpoint.makeRequest(using: ["query" : query])
             return session.dataTaskPublisher(for: request)

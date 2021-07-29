@@ -41,8 +41,11 @@ enum SearchEndpoint: EndpointProtocol {
         guard let query = arguments["query"] as? String else {
             throw RequestError.invalidArguments
         }
-        
-        let queryItems = [URLQueryItem(name: "q", value: query)]
+        let page = arguments["page"] as? Int ?? 1
+        let queryItems = [
+            URLQueryItem(name: "q", value: query),
+            URLQueryItem(name: "page", value: "\(page)")
+        ]
         let components = URLRequestFactory.makeURLComponents(using: config, with: queryItems)
         
         guard let url = components.url else {

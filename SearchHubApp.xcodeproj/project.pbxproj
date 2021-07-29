@@ -10,6 +10,7 @@
 		7807D22426B2FCAF00631A24 /* SearchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7807D22326B2FCAF00631A24 /* SearchServiceMock.swift */; };
 		7807D22526B2FCD900631A24 /* SearchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7807D22326B2FCAF00631A24 /* SearchServiceMock.swift */; };
 		7807D22726B337B200631A24 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7807D22626B337B200631A24 /* DetailViewController.swift */; };
+		7807D22A26B33FB300631A24 /* SearchServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7807D22926B33FB300631A24 /* SearchServiceProtocol.swift */; };
 		78F4A1FA26B1A22100FE676F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A1F926B1A22100FE676F /* AppDelegate.swift */; };
 		78F4A20326B1A22200FE676F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F4A20226B1A22200FE676F /* Assets.xcassets */; };
 		78F4A20626B1A22200FE676F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F4A20426B1A22200FE676F /* LaunchScreen.storyboard */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		7807D22326B2FCAF00631A24 /* SearchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceMock.swift; sourceTree = "<group>"; };
 		7807D22626B337B200631A24 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7807D22926B33FB300631A24 /* SearchServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceProtocol.swift; sourceTree = "<group>"; };
 		78F4A1F626B1A22100FE676F /* SearchHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F4A1F926B1A22100FE676F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F4A20226B1A22200FE676F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				78F4A25126B1B92000FE676F /* SearchEndpoint.swift */,
 				78F4A26726B1D70300FE676F /* SearchService.swift */,
+				7807D22926B33FB300631A24 /* SearchServiceProtocol.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				78F4A23D26B1B48900FE676F /* SearchContentView.swift in Sources */,
 				78F4A26826B1D70300FE676F /* SearchService.swift in Sources */,
 				78F4A25B26B1C19F00FE676F /* NavigatorProtocol.swift in Sources */,
+				7807D22A26B33FB300631A24 /* SearchServiceProtocol.swift in Sources */,
 				78F4A22C26B1A92D00FE676F /* Coordinator.swift in Sources */,
 				7807D22526B2FCD900631A24 /* SearchServiceMock.swift in Sources */,
 				7807D22726B337B200631A24 /* DetailViewController.swift in Sources */,
