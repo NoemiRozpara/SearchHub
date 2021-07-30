@@ -11,4 +11,6 @@ import Combine
 protocol SearchServiceProtocol {
     func search(query: String) -> AnyPublisher<SearchEndpoint.Response, Error>
     func loadMore(query: String, page: Int) -> AnyPublisher<SearchEndpoint.Response, Error>
+    
+    var resultsPerPage: Int { get }
 }

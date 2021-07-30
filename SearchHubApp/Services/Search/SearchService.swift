@@ -13,6 +13,8 @@ struct SearchService {
     private let session: URLSession
     private let decoder: JSONDecoder
     
+    let resultsPerPage: Int = 30
+    
     init(session: URLSession = URLSession.shared) {
         self.session = session
         decoder = JSONDecoder.withFormatters()

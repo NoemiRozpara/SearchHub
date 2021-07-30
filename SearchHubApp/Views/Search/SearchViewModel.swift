@@ -11,7 +11,7 @@ import Combine
 
 class SearchViewModel: ObservableObject {
     
-    @Published public var query: String = ""
+    @Published var query: String = ""
     
     @Published var results: [Repository] = []
     
@@ -25,9 +25,6 @@ class SearchViewModel: ObservableObject {
     
     private var cancellables: [AnyCancellable] = []
     
-    private var currentPage: Int = 0
-    
-    private var totalPages: Int = 0
     
     init(
         model: SearchModel,
@@ -35,6 +32,22 @@ class SearchViewModel: ObservableObject {
     ) {
         self.model = model
         self.coordinatorDelegate = coordinatorDelegate
+        
+        model.$results.sink { results in
+            self.results = results
+        }.store(in: &cancellables)
+        
+        model.$error.sink { error in
+            self.error = error
+        }.store(in: &cancellables)
+        
+        model.$isLoading.sink { isLoading in
+            self.isLoading = isLoading
+        }.store(in: &cancellables)
+        
+        model.$query.sink { query in
+            self.query = query
+        }.store(in: &cancellables)
     }
     
     func showDetails(using url: URL) {
@@ -42,46 +55,10 @@ class SearchViewModel: ObservableObject {
     }
     
     func search(_ query: String) {
-        error = nil
-        isLoading = true
         model.search(query)
-            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: { [weak self] completion in
-                    guard let self = self else {
-                        return
-                    }
-                    
-                    self.isLoading = false
-                    switch completion {
-                    case .failure(let error):
-                        print(error)
-                        self.results = []
-                        self.error = error.localizedDescription
-                    case .finished:
-                        self.error = nil
-                    }
-                },
-                receiveValue: { [weak self] response in
-                    guard let self = self else {
-                        return
-                    }
-                    
-                    if response.incompleteResults == true {
-                        self.error = "Error occured, please try again"
-                    } else {
-                        self.results = response.items
-                        self.currentPage = 1
-//                        self.totalPages = Int( round(response.totalCount / (self.currentPage * 30)))
-                    }
-                }
-            ).store(in: &cancellables)
     }
     
     func loadMore() {
-//        let newItems = (1 ... 10).map { _ in
-//            repositoryMock(id: "\(UUID().hashValue)")
-//        }
-//        results.append(contentsOf: newItems)
+        model.loadMore()
     }
 }
