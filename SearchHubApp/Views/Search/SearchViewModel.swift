@@ -25,6 +25,8 @@ class SearchViewModel: ObservableObject {
     
     private var cancellables: [AnyCancellable] = []
     
+    private var lastCallerID: Int = 0
+    
     
     init(
         model: SearchModel,
@@ -33,20 +35,19 @@ class SearchViewModel: ObservableObject {
         self.model = model
         self.coordinatorDelegate = coordinatorDelegate
         
-        model.$results.sink { results in
+        model.$results.sink { [weak self] results in
+            guard let self = self else { return }
             self.results = results
         }.store(in: &cancellables)
         
-        model.$error.sink { error in
+        model.$error.sink { [weak self] error in
+            guard let self = self else { return }
             self.error = error
         }.store(in: &cancellables)
         
-        model.$isLoading.sink { isLoading in
+        model.$isLoading.sink { [weak self] isLoading in
+            guard let self = self else { return }
             self.isLoading = isLoading
-        }.store(in: &cancellables)
-        
-        model.$query.sink { query in
-            self.query = query
         }.store(in: &cancellables)
     }
     
@@ -59,6 +60,10 @@ class SearchViewModel: ObservableObject {
     }
     
     func loadMore() {
-        model.loadMore()
+        guard lastCallerID != results.last?.id else {
+            return
+        }
+        lastCallerID = results.last?.id ?? 0
+        model.loadMore(query)
     }
 }

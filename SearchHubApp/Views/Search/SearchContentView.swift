@@ -44,8 +44,10 @@ struct SearchContentView: View {
             SearchResultView(result: repository)
                 .listRowInsets(.init())
                 .onAppear {
-                    if repository.id == viewModel.results.last?.id {
+                    print("\(repository.id), \(viewModel.results.last?.id), \(viewModel.isLoading)")
+                    if repository.id == viewModel.results.last?.id && !viewModel.isLoading {
                         viewModel.loadMore()
+                        print("load more")
                     }
                 }
         })
