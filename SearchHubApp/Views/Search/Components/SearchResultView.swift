@@ -13,40 +13,61 @@ struct SearchResultView: View {
     let result: Repository
     
     var body: some View {
-        HStack {
-            VStack {
-                Text(result.fullName)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.subheadline)
-                    .foregroundColor(theme.colorPalette.primaryText)
-                Text(result.description ?? " ")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .lineLimit(1)
-                    .font(.body)
-                    .foregroundColor(theme.colorPalette.primaryText)
-                HStack {
+        VStack {
+            HStack {
+                
+                URLImage(
+                    result.owner.avatarUrl,
+                    fallbackImageName: "person.fill"
+                )
+                .frame(width: 40, height: 40)
+                VStack {
+                    Text(result.fullName)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.subheadline)
+                        .foregroundColor(theme.colorPalette.primaryText)
+                    Text(result.description ?? " ")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .lineLimit(2)
+                        .font(.body)
+                        .foregroundColor(theme.colorPalette.primaryText)
+                }
+                Spacer()
+                Icon(name: "chevron.right")
+            }
+            
+            HStack {
+                ZStack {
                     LabelWithIcon(
                         text: "\(result.stargazersCount)",
                         iconName: "star.fill"
                     )
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                ZStack {
                     LabelWithIcon(
                         text: "\(result.watchersCount)",
                         iconName: "person.fill"
                     )
-                    result.language != nil
-                        ? LabelWithIcon(
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                result.language != nil
+                    ? ZStack {
+                        LabelWithIcon(
                             text: result.language!,
                             iconName: "gearshape.fill"
                         )
-                        : nil
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    : nil
             }
-            Spacer()
-            Icon(name: "arrow.up.right")
+            .frame(maxWidth: .infinity)
         }
         .padding()
-        .background(theme.colorPalette.background)
+        .background(Color(hex: "efefef"))
+        
     }
 }
 

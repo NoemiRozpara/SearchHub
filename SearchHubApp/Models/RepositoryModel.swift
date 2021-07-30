@@ -11,8 +11,7 @@ struct Repository: Identifiable, Codable {
     struct Owner: Codable {
         let login: String
         let id: Int
-        let avatarUrl: String?
-        let gravatarId: String?
+        let avatarUrl: URL?
         let url: String
     }
     

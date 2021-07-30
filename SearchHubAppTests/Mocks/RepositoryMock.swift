@@ -14,8 +14,7 @@ func makeRepositoryMock(id: Int) -> Repository {
         fullName: "eddy/Cats",
         owner: Repository.Owner(
             login: "eddy", id: 1,
-            avatarUrl: "",
-            gravatarId: "",
+            avatarUrl: URL(string: "https://www.pngkit.com/png/detail/911-9115516_avatar-icon-deadpool.png")!,
             url: ""
         ),
         private: false,
