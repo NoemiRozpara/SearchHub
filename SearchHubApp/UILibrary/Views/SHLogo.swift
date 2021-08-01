@@ -12,8 +12,10 @@ struct SHLogo: View {
     
     var body: some View {
         Text("SearchHub")
-            .font(.headline)
+            .font(.system(size: 30))
+            .bold()
             .foregroundColor(theme.colorPalette.accent)
+            .padding()
     }
 }
 

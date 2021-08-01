@@ -28,8 +28,9 @@ struct SearchContentView: View {
                 },
                 clearAction: viewModel.resetSearch
             )
-            ScrollView(.vertical, showsIndicators: false) {
-                if viewModel.results.count > 0 {
+            
+            if viewModel.results.count > 0 {
+                ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack {
                         ForEach(viewModel.results, id: \.id) { result in
                             makeSearchResult(using: result).id(UUID())
@@ -48,11 +49,14 @@ struct SearchContentView: View {
                                 : nil
                         }
                     }
-                } else if viewModel.error != nil {
-                    ErrorView(label: viewModel.error!)
-                } else {
-                    EmptyPlaceholderView()
                 }
+            } else if viewModel.error != nil {
+                ErrorView(label: viewModel.error!)
+                    .frame(maxHeight: .infinity)
+            }
+            else {
+                EmptyPlaceholderView()
+                    .frame(maxHeight: .infinity)
             }
         }
     }
