@@ -18,13 +18,12 @@ class SearchModel: ObservableObject {
     
     private var totalPages: Int = 0
     
+    private let resultsPerPage: Int
+    
     let results = CurrentValueSubject<[Repository], Never>([])
     
     let totalResults = PassthroughSubject<Int, Never>()
     
-//    @Published private(set) var results: [Repository] = []
-    
-//    @Published private(set) var totalResults: Int = 0
     
     @Published private(set) var error: String? = nil
     
@@ -34,6 +33,7 @@ class SearchModel: ObservableObject {
     
     init(searchService: SearchServiceProtocol) {
         self.searchService = searchService
+        resultsPerPage = searchService.resultsPerPage
     }
  
     func search(_ query: String) {
@@ -68,10 +68,7 @@ class SearchModel: ObservableObject {
                     } else {
                         self.results.send(response.items)
                         self.currentPage = 1
-                        self.totalPages = self.getTotalPages(
-                            totalResults: response.totalCount,
-                            perPage: self.searchService.resultsPerPage
-                        )
+                        self.totalPages = response.getTotalPages(resultsPerPage: self.resultsPerPage)
                         self.totalResults.send(response.totalCount)
                         self.hasMoreResults = self.currentPage < self.totalPages
                     }
@@ -109,22 +106,11 @@ class SearchModel: ObservableObject {
                     } else {
                         let appendedResults = self.results.value + response.items
                         self.results.send(appendedResults)
-                        self.totalPages = self.getTotalPages(
-                            totalResults: response.totalCount,
-                            perPage: self.searchService.resultsPerPage
-                        )
+                        self.totalPages = response.getTotalPages(resultsPerPage: self.resultsPerPage)
                         self.totalResults.send(response.totalCount)
                         self.hasMoreResults = self.currentPage < self.totalPages
                     }
                 }
             ).store(in: &cancellables)
-    }
-    
-    private func getTotalPages(
-        totalResults: Int,
-        perPage: Int
-    ) -> Int {
-        let rounded = round(Double(totalResults) / Double(perPage))
-        return Int(rounded)
     }
 }
