@@ -14,12 +14,16 @@ struct SHSearchField: View {
     
     private let executeSearch: ((String) -> Void)?
     
+    private let clearAction: (() -> Void)?
+    
     init(
         query: Binding<String>,
-        executeSearch: ((String) -> Void)? = nil
+        executeSearch: ((String) -> Void)? = nil,
+        clearAction: (() -> Void)? = nil
     ) {
         self.query = query
         self.executeSearch = executeSearch
+        self.clearAction = clearAction
     }
     
     var body: some View {
@@ -80,7 +84,7 @@ struct SHSearchField: View {
             )
         query.wrappedValue = ""
         isEditing = false
-        
+        clearAction?()
     }
 }
 

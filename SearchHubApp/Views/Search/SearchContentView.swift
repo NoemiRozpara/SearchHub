@@ -21,29 +21,38 @@ struct SearchContentView: View {
     var body: some View {
         VStack {
             SHLogo()
-            SHSearchField(query: $viewModel.query) { query in
-                viewModel.search(query)
-            }
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVStack {
-                    ForEach(viewModel.results, id: \.id) { result in
-                        makeSearchResult(using: result).id(UUID())
-                    }
-                    Text(viewModel.resultsCountMessage)
-                        .font(.caption)
-                    if viewModel.isLoading {
-                        ProgressView()
-                    } else {
-                        viewModel.hasMoreResults
-                            ? SHButton(
-                                label: "Load More",
-                                iconName: "chevron.down",
-                                action: viewModel.loadMore
-                            )
-                            : nil
+            SHSearchField(
+                query: $viewModel.query,
+                executeSearch: { query in
+                    viewModel.search(query)
+                },
+                clearAction: viewModel.resetSearch
+            )
+            viewModel.results.count > 0
+                ? ScrollView(.vertical, showsIndicators: false) {
+                    LazyVStack {
+                        ForEach(viewModel.results, id: \.id) { result in
+                            makeSearchResult(using: result).id(UUID())
+                        }
+                        if viewModel.isLoading {
+                            ProgressView()
+                        } else {
+                            Text(viewModel.resultsCountMessage)
+                                .font(.caption)
+                            viewModel.hasMoreResults
+                                ? SHButton(
+                                    label: "Load More",
+                                    iconName: "chevron.down",
+                                    action: viewModel.loadMore
+                                )
+                                : nil
+                        }
                     }
                 }
-            }
+                : nil
+            viewModel.error != nil
+                ? Text(viewModel.error!)
+                : nil
         }
     }
     
