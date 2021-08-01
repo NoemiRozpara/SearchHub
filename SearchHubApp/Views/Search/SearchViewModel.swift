@@ -17,6 +17,8 @@ class SearchViewModel: ObservableObject {
     
     @Published var isLoading = false
     
+    @Published var hasMoreResults = false
+    
     @Published var error: String?
     
     private let model: SearchModel
@@ -48,6 +50,11 @@ class SearchViewModel: ObservableObject {
         model.$isLoading.sink { [weak self] isLoading in
             guard let self = self else { return }
             self.isLoading = isLoading
+        }.store(in: &cancellables)
+        
+        model.$hasMoreResults.sink { [weak self] hasMoreResults in
+            guard let self = self else { return }
+            self.hasMoreResults = hasMoreResults
         }.store(in: &cancellables)
     }
     

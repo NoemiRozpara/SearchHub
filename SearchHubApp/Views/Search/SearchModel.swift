@@ -24,6 +24,8 @@ class SearchModel: ObservableObject {
     
     @Published private(set) var isLoading = false
     
+    @Published private(set) var hasMoreResults = false
+    
     init(searchService: SearchServiceProtocol) {
         self.searchService = searchService
     }
@@ -64,6 +66,7 @@ class SearchModel: ObservableObject {
                             totalResults: response.totalCount,
                             perPage: self.searchService.resultsPerPage
                         )
+                        self.hasMoreResults = self.currentPage < self.totalPages
                     }
                 }
             ).store(in: &cancellables)

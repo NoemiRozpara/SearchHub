@@ -31,6 +31,12 @@ struct SearchContentView: View {
                     }
                     if viewModel.isLoading {
                         ProgressView()
+                    } else if viewModel.hasMoreResults {
+                        SHButton(
+                            label: "Load More",
+                            iconName: "chevron.down",
+                            action: viewModel.loadMore
+                        )
                     }
                 }
             }
@@ -43,13 +49,6 @@ struct SearchContentView: View {
         }, label: {
             SearchResultView(result: repository)
                 .listRowInsets(.init())
-                .onAppear {
-                    print("\(repository.id), \(viewModel.results.last?.id), \(viewModel.isLoading)")
-                    if repository.id == viewModel.results.last?.id && !viewModel.isLoading {
-                        viewModel.loadMore()
-                        print("load more")
-                    }
-                }
         })
     }
 }

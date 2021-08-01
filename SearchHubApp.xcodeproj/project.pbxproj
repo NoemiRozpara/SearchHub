@@ -44,6 +44,7 @@
 		78F4A26A26B1D87300FE676F /* JsonDecoder+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26926B1D87300FE676F /* JsonDecoder+Formatter.swift */; };
 		78F50BA326B461DB00FB5963 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BA226B461DB00FB5963 /* ImageLoader.swift */; };
 		78F50BA526B4621F00FB5963 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BA426B4621F00FB5963 /* URLImage.swift */; };
+		78F50BA726B68EE600FB5963 /* SHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BA626B68EE600FB5963 /* SHButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		78F4A26926B1D87300FE676F /* JsonDecoder+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JsonDecoder+Formatter.swift"; sourceTree = "<group>"; };
 		78F50BA226B461DB00FB5963 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		78F50BA426B4621F00FB5963 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		78F50BA626B68EE600FB5963 /* SHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				78F4A25C26B1C32500FE676F /* Logo.swift */,
 				78F4A24826B1B67100FE676F /* SearchField.swift */,
 				78F50BA426B4621F00FB5963 /* URLImage.swift */,
+				78F50BA626B68EE600FB5963 /* SHButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F50BA726B68EE600FB5963 /* SHButton.swift in Sources */,
 				78F4A24526B1B62A00FE676F /* LabelWithIcon.swift in Sources */,
 				78F4A26626B1D61900FE676F /* String+LocalizedError.swift in Sources */,
 				78F50BA326B461DB00FB5963 /* ImageLoader.swift in Sources */,
