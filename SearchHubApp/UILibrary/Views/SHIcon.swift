@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Icon: View {
+struct SHIcon: View {
     @EnvironmentObject var theme: Theme
     
     let name: String
@@ -36,6 +36,6 @@ struct Icon: View {
 
 struct Icon_Previews: PreviewProvider {
     static var previews: some View {
-        Icon(name: "star.fill").environmentObject(Theme())
+        SHIcon(name: "star.fill").environmentObject(Theme())
     }
 }

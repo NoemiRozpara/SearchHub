@@ -20,7 +20,7 @@ struct SHButton: View {
         Button(
             action: action,
             label: {
-                LabelWithIcon(
+                SHLabelWithIcon(
                     text: label,
                     iconName: iconName,
                     primary: false

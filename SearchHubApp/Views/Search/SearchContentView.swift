@@ -20,8 +20,8 @@ struct SearchContentView: View {
     
     var body: some View {
         VStack {
-            Logo()
-            SearchField(query: $viewModel.query) { query in
+            SHLogo()
+            SHSearchField(query: $viewModel.query) { query in
                 viewModel.search(query)
             }
             ScrollView(.vertical, showsIndicators: false) {

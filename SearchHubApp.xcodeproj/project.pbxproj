@@ -25,9 +25,9 @@
 		78F4A23D26B1B48900FE676F /* SearchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23C26B1B48900FE676F /* SearchContentView.swift */; };
 		78F4A24026B1B53100FE676F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A23F26B1B53100FE676F /* Theme.swift */; };
 		78F4A24226B1B54C00FE676F /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A24126B1B54C00FE676F /* Color+Hex.swift */; };
-		78F4A24526B1B62A00FE676F /* LabelWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A24426B1B62A00FE676F /* LabelWithIcon.swift */; };
-		78F4A24726B1B64300FE676F /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A24626B1B64300FE676F /* Icon.swift */; };
-		78F4A24926B1B67100FE676F /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A24826B1B67100FE676F /* SearchField.swift */; };
+		78F4A24526B1B62A00FE676F /* SHLabelWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A24426B1B62A00FE676F /* SHLabelWithIcon.swift */; };
+		78F4A24726B1B64300FE676F /* SHIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A24626B1B64300FE676F /* SHIcon.swift */; };
+		78F4A24926B1B67100FE676F /* SHSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A24826B1B67100FE676F /* SHSearchField.swift */; };
 		78F4A24B26B1B7C000FE676F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A24A26B1B7C000FE676F /* SearchViewModel.swift */; };
 		78F4A24E26B1B84200FE676F /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A24D26B1B84200FE676F /* SearchResultView.swift */; };
 		78F4A25226B1B92000FE676F /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25126B1B92000FE676F /* SearchEndpoint.swift */; };
@@ -35,7 +35,7 @@
 		78F4A25726B1B9DE00FE676F /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25526B1B9B500FE676F /* RepositoryMock.swift */; };
 		78F4A25926B1BAEF00FE676F /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25826B1BAEF00FE676F /* SearchModel.swift */; };
 		78F4A25B26B1C19F00FE676F /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25A26B1C19F00FE676F /* NavigatorProtocol.swift */; };
-		78F4A25D26B1C32500FE676F /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25C26B1C32500FE676F /* Logo.swift */; };
+		78F4A25D26B1C32500FE676F /* SHLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25C26B1C32500FE676F /* SHLogo.swift */; };
 		78F4A26026B1D17300FE676F /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A25F26B1D17300FE676F /* EndpointProtocol.swift */; };
 		78F4A26226B1D32300FE676F /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26126B1D32300FE676F /* URLRequestFactory.swift */; };
 		78F4A26426B1D5B600FE676F /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26326B1D5B600FE676F /* RepositoryModel.swift */; };
@@ -43,7 +43,7 @@
 		78F4A26826B1D70300FE676F /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26726B1D70300FE676F /* SearchService.swift */; };
 		78F4A26A26B1D87300FE676F /* JsonDecoder+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4A26926B1D87300FE676F /* JsonDecoder+Formatter.swift */; };
 		78F50BA326B461DB00FB5963 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BA226B461DB00FB5963 /* ImageLoader.swift */; };
-		78F50BA526B4621F00FB5963 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BA426B4621F00FB5963 /* URLImage.swift */; };
+		78F50BA526B4621F00FB5963 /* SHURLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BA426B4621F00FB5963 /* SHURLImage.swift */; };
 		78F50BA726B68EE600FB5963 /* SHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BA626B68EE600FB5963 /* SHButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,16 +88,16 @@
 		78F4A23C26B1B48900FE676F /* SearchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentView.swift; sourceTree = "<group>"; };
 		78F4A23F26B1B53100FE676F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		78F4A24126B1B54C00FE676F /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
-		78F4A24426B1B62A00FE676F /* LabelWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithIcon.swift; sourceTree = "<group>"; };
-		78F4A24626B1B64300FE676F /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		78F4A24826B1B67100FE676F /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		78F4A24426B1B62A00FE676F /* SHLabelWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLabelWithIcon.swift; sourceTree = "<group>"; };
+		78F4A24626B1B64300FE676F /* SHIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHIcon.swift; sourceTree = "<group>"; };
+		78F4A24826B1B67100FE676F /* SHSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSearchField.swift; sourceTree = "<group>"; };
 		78F4A24A26B1B7C000FE676F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		78F4A24D26B1B84200FE676F /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		78F4A25126B1B92000FE676F /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		78F4A25526B1B9B500FE676F /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
 		78F4A25826B1BAEF00FE676F /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		78F4A25A26B1C19F00FE676F /* NavigatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
-		78F4A25C26B1C32500FE676F /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		78F4A25C26B1C32500FE676F /* SHLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLogo.swift; sourceTree = "<group>"; };
 		78F4A25F26B1D17300FE676F /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
 		78F4A26126B1D32300FE676F /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
 		78F4A26326B1D5B600FE676F /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		78F4A26726B1D70300FE676F /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		78F4A26926B1D87300FE676F /* JsonDecoder+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JsonDecoder+Formatter.swift"; sourceTree = "<group>"; };
 		78F50BA226B461DB00FB5963 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		78F50BA426B4621F00FB5963 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		78F50BA426B4621F00FB5963 /* SHURLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHURLImage.swift; sourceTree = "<group>"; };
 		78F50BA626B68EE600FB5963 /* SHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,11 +254,11 @@
 		78F4A24326B1B61400FE676F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				78F4A24426B1B62A00FE676F /* LabelWithIcon.swift */,
-				78F4A24626B1B64300FE676F /* Icon.swift */,
-				78F4A25C26B1C32500FE676F /* Logo.swift */,
-				78F4A24826B1B67100FE676F /* SearchField.swift */,
-				78F50BA426B4621F00FB5963 /* URLImage.swift */,
+				78F4A24426B1B62A00FE676F /* SHLabelWithIcon.swift */,
+				78F4A24626B1B64300FE676F /* SHIcon.swift */,
+				78F4A25C26B1C32500FE676F /* SHLogo.swift */,
+				78F4A24826B1B67100FE676F /* SHSearchField.swift */,
+				78F50BA426B4621F00FB5963 /* SHURLImage.swift */,
 				78F50BA626B68EE600FB5963 /* SHButton.swift */,
 			);
 			path = Views;
@@ -432,7 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F50BA726B68EE600FB5963 /* SHButton.swift in Sources */,
-				78F4A24526B1B62A00FE676F /* LabelWithIcon.swift in Sources */,
+				78F4A24526B1B62A00FE676F /* SHLabelWithIcon.swift in Sources */,
 				78F4A26626B1D61900FE676F /* String+LocalizedError.swift in Sources */,
 				78F50BA326B461DB00FB5963 /* ImageLoader.swift in Sources */,
 				78F4A24026B1B53100FE676F /* Theme.swift in Sources */,
@@ -441,21 +441,21 @@
 				78F4A26226B1D32300FE676F /* URLRequestFactory.swift in Sources */,
 				78F4A26426B1D5B600FE676F /* RepositoryModel.swift in Sources */,
 				78F4A23126B1AD8A00FE676F /* SearchViewController.swift in Sources */,
-				78F50BA526B4621F00FB5963 /* URLImage.swift in Sources */,
+				78F50BA526B4621F00FB5963 /* SHURLImage.swift in Sources */,
 				78F4A24E26B1B84200FE676F /* SearchResultView.swift in Sources */,
 				78F4A26026B1D17300FE676F /* EndpointProtocol.swift in Sources */,
-				78F4A25D26B1C32500FE676F /* Logo.swift in Sources */,
+				78F4A25D26B1C32500FE676F /* SHLogo.swift in Sources */,
 				78F4A1FA26B1A22100FE676F /* AppDelegate.swift in Sources */,
 				78F4A25226B1B92000FE676F /* SearchEndpoint.swift in Sources */,
 				78F4A22F26B1AACD00FE676F /* Facade.swift in Sources */,
-				78F4A24726B1B64300FE676F /* Icon.swift in Sources */,
+				78F4A24726B1B64300FE676F /* SHIcon.swift in Sources */,
 				78F4A24226B1B54C00FE676F /* Color+Hex.swift in Sources */,
 				78F4A24B26B1B7C000FE676F /* SearchViewModel.swift in Sources */,
 				78F4A25726B1B9DE00FE676F /* RepositoryMock.swift in Sources */,
 				78F4A22A26B1A8FE00FE676F /* CoordinatorProtocol.swift in Sources */,
 				78F4A26A26B1D87300FE676F /* JsonDecoder+Formatter.swift in Sources */,
 				78F4A23626B1B04200FE676F /* FacadeProtocol.swift in Sources */,
-				78F4A24926B1B67100FE676F /* SearchField.swift in Sources */,
+				78F4A24926B1B67100FE676F /* SHSearchField.swift in Sources */,
 				78F4A23D26B1B48900FE676F /* SearchContentView.swift in Sources */,
 				78F4A26826B1D70300FE676F /* SearchService.swift in Sources */,
 				78F4A25B26B1C19F00FE676F /* NavigatorProtocol.swift in Sources */,

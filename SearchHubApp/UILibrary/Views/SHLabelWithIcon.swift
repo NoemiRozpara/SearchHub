@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LabelWithIcon: View {
+struct SHLabelWithIcon: View {
     @EnvironmentObject var theme: Theme
     
     let text: String
@@ -26,7 +26,7 @@ struct LabelWithIcon: View {
     
     var body: some View {
         HStack {
-            Icon(name: iconName)
+            SHIcon(name: iconName)
             Text(text)
                 .font(.caption)
                 .foregroundColor(
@@ -42,7 +42,7 @@ struct LabelWithIcon_Previews: PreviewProvider {
     static var previews: some View {
         let theme = Theme()
         
-        LabelWithIcon(
+        SHLabelWithIcon(
             text: "Lasagna is the best",
             iconName: "heart.fill"
         )

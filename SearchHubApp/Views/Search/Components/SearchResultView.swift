@@ -16,7 +16,7 @@ struct SearchResultView: View {
         VStack {
             HStack {
                 
-                URLImage(
+                SHURLImage(
                     result.owner.avatarUrl,
                     fallbackImageName: "person.fill"
                 )
@@ -33,12 +33,12 @@ struct SearchResultView: View {
                         .foregroundColor(theme.colorPalette.primaryText)
                 }
                 Spacer()
-                Icon(name: "chevron.right")
+                SHIcon(name: "chevron.right")
             }
             
             HStack {
                 ZStack {
-                    LabelWithIcon(
+                    SHLabelWithIcon(
                         text: "\(result.stargazersCount)",
                         iconName: "star.fill"
                     )
@@ -46,7 +46,7 @@ struct SearchResultView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 ZStack {
-                    LabelWithIcon(
+                    SHLabelWithIcon(
                         text: "\(result.watchersCount)",
                         iconName: "person.fill"
                     )
@@ -55,7 +55,7 @@ struct SearchResultView: View {
                 
                 result.language != nil
                     ? ZStack {
-                        LabelWithIcon(
+                        SHLabelWithIcon(
                             text: result.language!,
                             iconName: "gearshape.fill"
                         )

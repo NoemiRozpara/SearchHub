@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct URLImage: View {
+struct SHURLImage: View {
     @ObservedObject var imageLoader: ImageLoader
     
     @State var image: UIImage = UIImage()
@@ -50,6 +50,6 @@ struct URLImage: View {
 
 struct URLImage_Previews: PreviewProvider {
     static var previews: some View {
-        URLImage(URL(string: "https://www.pngkit.com/png/detail/911-9115516_avatar-icon-deadpool.png")!)
+        SHURLImage(URL(string: "https://www.pngkit.com/png/detail/911-9115516_avatar-icon-deadpool.png")!)
     }
 }

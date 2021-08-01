@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchField: View {
+struct SHSearchField: View {
     var query: Binding<String>
     
     @State private var isEditing = false
@@ -38,7 +38,7 @@ struct SearchField: View {
                 .cornerRadius(8)
                 .overlay(
                     HStack {
-                        Icon(name: "magnifyingglass")
+                        SHIcon(name: "magnifyingglass")
                             .frame(
                                 minWidth: 0,
                                 maxWidth: .infinity,
@@ -49,7 +49,7 @@ struct SearchField: View {
                             Button(action: {
                                 query.wrappedValue = ""
                             }) {
-                                Icon(name: "multiply.circle.fill")
+                                SHIcon(name: "multiply.circle.fill")
                                     .padding(.trailing, 8)
                             }
                         }
@@ -86,7 +86,7 @@ struct SearchField: View {
 
 struct SearchField_Previews: PreviewProvider {
     static var previews: some View {
-        SearchField(
+        SHSearchField(
             query: .constant(""),
             executeSearch: nil
         ).environmentObject(Theme())

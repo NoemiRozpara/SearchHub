@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Logo: View {
+struct SHLogo: View {
     @EnvironmentObject var theme: Theme
     
     var body: some View {
@@ -19,6 +19,6 @@ struct Logo: View {
 
 struct Logo_Previews: PreviewProvider {
     static var previews: some View {
-        Logo().environmentObject(Theme())
+        SHLogo().environmentObject(Theme())
     }
 }
