@@ -49,9 +49,9 @@ struct SearchContentView: View {
                         }
                     }
                 } else if viewModel.error != nil {
-                    Text(viewModel.error!)
+                    ErrorView(label: viewModel.error!)
                 } else {
-                    EmptyPlaceholder()
+                    EmptyPlaceholderView()
                 }
             }
         }

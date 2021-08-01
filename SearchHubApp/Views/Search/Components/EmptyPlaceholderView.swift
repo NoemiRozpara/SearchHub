@@ -7,18 +7,17 @@
 
 import SwiftUI
 
-struct EmptyPlaceholder: View {
+struct EmptyPlaceholderView: View {
     var body: some View {
-        VStack {
-            SHIcon(name: "eyes", size: 50)
-            Text("Search for some great repository, try \"Swift\"!")
-        }
-        
+        SHStackedIconWithText(
+            label: "Search for some great repository, try \"Swift\"!",
+            iconName: "eyes"
+        )
     }
 }
 
 struct EmptyPlaceholder_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyPlaceholder().environmentObject(Theme())
+        EmptyPlaceholderView().environmentObject(Theme())
     }
 }

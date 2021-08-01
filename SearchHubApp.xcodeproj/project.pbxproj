@@ -47,7 +47,9 @@
 		78F50BA726B68EE600FB5963 /* SHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BA626B68EE600FB5963 /* SHButton.swift */; };
 		78F50BAA26B6A31F00FB5963 /* Int+Divide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BA926B6A31F00FB5963 /* Int+Divide.swift */; };
 		78F50BAC26B6A3CE00FB5963 /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BAB26B6A3CE00FB5963 /* SearchResponseModel.swift */; };
-		78F50BAE26B6D5C000FB5963 /* EmptyPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BAD26B6D5C000FB5963 /* EmptyPlaceholder.swift */; };
+		78F50BAE26B6D5C000FB5963 /* EmptyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BAD26B6D5C000FB5963 /* EmptyPlaceholderView.swift */; };
+		78F50BB026B6DA8000FB5963 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BAF26B6DA8000FB5963 /* ErrorView.swift */; };
+		78F50BB226B6DB3100FB5963 /* SHStackedIconWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F50BB126B6DB3100FB5963 /* SHStackedIconWithText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +114,9 @@
 		78F50BA626B68EE600FB5963 /* SHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHButton.swift; sourceTree = "<group>"; };
 		78F50BA926B6A31F00FB5963 /* Int+Divide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Divide.swift"; sourceTree = "<group>"; };
 		78F50BAB26B6A3CE00FB5963 /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
-		78F50BAD26B6D5C000FB5963 /* EmptyPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholder.swift; sourceTree = "<group>"; };
+		78F50BAD26B6D5C000FB5963 /* EmptyPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholderView.swift; sourceTree = "<group>"; };
+		78F50BAF26B6DA8000FB5963 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		78F50BB126B6DB3100FB5963 /* SHStackedIconWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHStackedIconWithText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +271,7 @@
 				78F4A24826B1B67100FE676F /* SHSearchField.swift */,
 				78F50BA426B4621F00FB5963 /* SHURLImage.swift */,
 				78F50BA626B68EE600FB5963 /* SHButton.swift */,
+				78F50BB126B6DB3100FB5963 /* SHStackedIconWithText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,7 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				78F4A24D26B1B84200FE676F /* SearchResultView.swift */,
-				78F50BAD26B6D5C000FB5963 /* EmptyPlaceholder.swift */,
+				78F50BAD26B6D5C000FB5963 /* EmptyPlaceholderView.swift */,
+				78F50BAF26B6DA8000FB5963 /* ErrorView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -455,12 +461,14 @@
 				78F4A24026B1B53100FE676F /* Theme.swift in Sources */,
 				78F4A23326B1AE1400FE676F /* UIViewController+SwiftUI.swift in Sources */,
 				78F4A25926B1BAEF00FE676F /* SearchModel.swift in Sources */,
+				78F50BB026B6DA8000FB5963 /* ErrorView.swift in Sources */,
 				78F4A26226B1D32300FE676F /* URLRequestFactory.swift in Sources */,
-				78F50BAE26B6D5C000FB5963 /* EmptyPlaceholder.swift in Sources */,
+				78F50BAE26B6D5C000FB5963 /* EmptyPlaceholderView.swift in Sources */,
 				78F4A26426B1D5B600FE676F /* RepositoryModel.swift in Sources */,
 				78F4A23126B1AD8A00FE676F /* SearchViewController.swift in Sources */,
 				78F50BA526B4621F00FB5963 /* SHURLImage.swift in Sources */,
 				78F4A24E26B1B84200FE676F /* SearchResultView.swift in Sources */,
+				78F50BB226B6DB3100FB5963 /* SHStackedIconWithText.swift in Sources */,
 				78F4A26026B1D17300FE676F /* EndpointProtocol.swift in Sources */,
 				78F4A25D26B1C32500FE676F /* SHLogo.swift in Sources */,
 				78F50BAC26B6A3CE00FB5963 /* SearchResponseModel.swift in Sources */,
