@@ -18,7 +18,13 @@ class SearchModel: ObservableObject {
     
     private var totalPages: Int = 0
     
-    @Published private(set) var results: [Repository] = []
+    let results = CurrentValueSubject<[Repository], Never>([])
+    
+    let totalResults = PassthroughSubject<Int, Never>()
+    
+//    @Published private(set) var results: [Repository] = []
+    
+//    @Published private(set) var totalResults: Int = 0
     
     @Published private(set) var error: String? = nil
     
@@ -46,7 +52,7 @@ class SearchModel: ObservableObject {
                     switch completion {
                     case .failure(let error):
                         print(error)
-                        self.results = []
+                        self.results.send([])
                         self.error = error.localizedDescription
                     case .finished:
                         self.error = nil
@@ -60,12 +66,13 @@ class SearchModel: ObservableObject {
                     if response.incompleteResults == true {
                         self.error = "Error occured, please try again"
                     } else {
-                        self.results = response.items
+                        self.results.send(response.items)
                         self.currentPage = 1
                         self.totalPages = self.getTotalPages(
                             totalResults: response.totalCount,
                             perPage: self.searchService.resultsPerPage
                         )
+                        self.totalResults.send(response.totalCount)
                         self.hasMoreResults = self.currentPage < self.totalPages
                     }
                 }
@@ -100,11 +107,13 @@ class SearchModel: ObservableObject {
                     if response.incompleteResults == true {
                         self.error = "Error occured, please try again"
                     } else {
-                        self.results.append(contentsOf: response.items)
+                        let appendedResults = self.results.value + response.items
+                        self.results.send(appendedResults)
                         self.totalPages = self.getTotalPages(
                             totalResults: response.totalCount,
                             perPage: self.searchService.resultsPerPage
                         )
+                        self.totalResults.send(response.totalCount)
                         self.hasMoreResults = self.currentPage < self.totalPages
                     }
                 }

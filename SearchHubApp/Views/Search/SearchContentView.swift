@@ -29,6 +29,8 @@ struct SearchContentView: View {
                     ForEach(viewModel.results, id: \.id) { result in
                         makeSearchResult(using: result).id(UUID())
                     }
+                    Text(viewModel.resultsCountMessage)
+                        .font(.caption)
                     if viewModel.isLoading {
                         ProgressView()
                     } else if viewModel.hasMoreResults {

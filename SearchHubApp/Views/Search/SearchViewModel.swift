@@ -21,6 +21,10 @@ class SearchViewModel: ObservableObject {
     
     @Published var error: String?
     
+    @Published var resultsCountMessage: String = ""
+    
+    @Published private(set) var totalResults: Int = 0
+    
     private let model: SearchModel
     
     private weak var coordinatorDelegate: NavigatorProtocol?
@@ -37,7 +41,7 @@ class SearchViewModel: ObservableObject {
         self.model = model
         self.coordinatorDelegate = coordinatorDelegate
         
-        model.$results.sink { [weak self] results in
+        model.results.sink { [weak self] results in
             guard let self = self else { return }
             self.results = results
         }.store(in: &cancellables)
@@ -56,6 +60,14 @@ class SearchViewModel: ObservableObject {
             guard let self = self else { return }
             self.hasMoreResults = hasMoreResults
         }.store(in: &cancellables)
+        
+        model.results
+            .combineLatest(model.totalResults)
+            .map { (repositories, totalResults) in
+                return "Displaying \(repositories.count) out of \(totalResults)"
+            }.sink { [weak self] message in
+                self?.resultsCountMessage = message
+            }.store(in: &cancellables)
     }
     
     func showDetails(using url: URL) {
