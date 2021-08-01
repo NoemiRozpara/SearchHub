@@ -14,22 +14,17 @@ class SearchModel: ObservableObject {
     
     private var cancellables: [AnyCancellable] = []
     
-    private var currentPage: Int = 0
-    
-    private var totalPages: Int = 0
-    
     private let resultsPerPage: Int
+    
+    let currentPage = CurrentValueSubject<Int, Never>(0)
+    
+    let totalPages = CurrentValueSubject<Int, Never>(0)
     
     let results = CurrentValueSubject<[Repository], Never>([])
     
-    let totalResults = PassthroughSubject<Int, Never>()
+    let error = PassthroughSubject<String?, Never>()
     
-    
-    @Published private(set) var error: String? = nil
-    
-    @Published private(set) var isLoading = false
-    
-    @Published private(set) var hasMoreResults = false
+    let isLoading = PassthroughSubject<Bool, Never>()
     
     init(searchService: SearchServiceProtocol) {
         self.searchService = searchService
@@ -37,80 +32,75 @@ class SearchModel: ObservableObject {
     }
  
     func search(_ query: String) {
-        error = nil
-        isLoading = true
-        currentPage = 1
+        startSearchState()
         searchService.search(query: query)
             .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { [weak self] completion in
-                    guard let self = self else {
-                        return
-                    }
-                    
-                    self.isLoading = false
-                    switch completion {
-                    case .failure(let error):
-                        print(error)
-                        self.results.send([])
-                        self.error = error.localizedDescription
-                    case .finished:
-                        self.error = nil
-                    }
+                    self?.receiveCompletion(completion, resetResultsOnError: true)
                 },
                 receiveValue: { [weak self] response in
-                    guard let self = self else {
-                        return
-                    }
-                    
-                    if response.incompleteResults == true {
-                        self.error = "Error occured, please try again"
-                    } else {
-                        self.results.send(response.items)
-                        self.currentPage = 1
-                        self.totalPages = response.getTotalPages(resultsPerPage: self.resultsPerPage)
-                        self.totalResults.send(response.totalCount)
-                        self.hasMoreResults = self.currentPage < self.totalPages
-                    }
+                    self?.receiveResponse(response, overrideResults: true)
                 }
             ).store(in: &cancellables)
     }
     
     func loadMore(_ query: String) {
-        guard currentPage < totalPages else {
+        guard currentPage.value < totalPages.value else {
             return
         }
-        error = nil
-        isLoading = true
-        currentPage += 1
-        searchService.loadMore(query: query, page: currentPage)
+        startSearchState(incrementCurrentPage: true)
+        searchService.loadMore(query: query, page: currentPage.value)
             .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { [weak self] completion in
-                    guard let self = self else { return }
-                    
-                    self.isLoading = false
-                    switch completion {
-                    case .failure(let error):
-                        print(error)
-                        self.error = error.localizedDescription
-                    case .finished:
-                        self.error = nil
-                    }
+                    self?.receiveCompletion(completion)
                 },
                 receiveValue: { [weak self] response in
-                    guard let self = self else { return }
-                    
-                    if response.incompleteResults == true {
-                        self.error = "Error occured, please try again"
-                    } else {
-                        let appendedResults = self.results.value + response.items
-                        self.results.send(appendedResults)
-                        self.totalPages = response.getTotalPages(resultsPerPage: self.resultsPerPage)
-                        self.totalResults.send(response.totalCount)
-                        self.hasMoreResults = self.currentPage < self.totalPages
-                    }
+                    self?.receiveResponse(response)
                 }
             ).store(in: &cancellables)
+    }
+    
+    func resetSearch() {
+        self.results.send([])
+        self.currentPage.send(0)
+        self.totalPages.send(0)
+    }
+}
+
+private extension SearchModel {
+    func receiveCompletion(
+        _ completion: Subscribers.Completion<Error>,
+        resetResultsOnError: Bool = false
+    ) {
+        isLoading.send(false)
+        switch completion {
+        case .failure(let error):
+            self.error.send(error.localizedDescription)
+            if resetResultsOnError {
+                results.send([])
+            }
+        case .finished:
+            return
+        }
+    }
+    
+    func receiveResponse(
+        _ response: SearchEndpoint.Response,
+        overrideResults: Bool = false
+    ) {
+        let results = overrideResults
+            ? response.items
+            : self.results.value + response.items
+        self.results.send(results)
+        self.totalPages.send(response.totalPages)
+    }
+    
+    func startSearchState(incrementCurrentPage: Bool = true) {
+        error.send(nil)
+        isLoading.send(true)
+        let page = incrementCurrentPage ? currentPage.value + 1 : 1
+        currentPage.send(page)
     }
 }

@@ -15,7 +15,6 @@ struct SearchServiceMock: SearchServiceProtocol {
         }
         return SearchEndpoint.Response(
             totalCount: 99,
-            incompleteResults: false,
             items: items
         )
     }

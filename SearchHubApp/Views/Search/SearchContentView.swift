@@ -33,12 +33,14 @@ struct SearchContentView: View {
                         .font(.caption)
                     if viewModel.isLoading {
                         ProgressView()
-                    } else if viewModel.hasMoreResults {
-                        SHButton(
-                            label: "Load More",
-                            iconName: "chevron.down",
-                            action: viewModel.loadMore
-                        )
+                    } else {
+                        viewModel.hasMoreResults
+                            ? SHButton(
+                                label: "Load More",
+                                iconName: "chevron.down",
+                                action: viewModel.loadMore
+                            )
+                            : nil
                     }
                 }
             }

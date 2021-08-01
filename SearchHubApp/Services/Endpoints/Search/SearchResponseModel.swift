@@ -9,10 +9,9 @@ import Foundation
 
 struct SearchResponseModel: Codable {
     var totalCount: Int
-    var incompleteResults: Bool
     var items: [Repository]
     
-    func getTotalPages(resultsPerPage: Int) -> Int {
-        Int.divideRoundUp(items.count, resultsPerPage)
+    var totalPages: Int {
+        Int.divideRoundUp(totalCount, items.count)
     }
 }
