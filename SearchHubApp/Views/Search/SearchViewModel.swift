@@ -67,10 +67,6 @@ class SearchViewModel: ObservableObject {
     }
     
     func loadMore() {
-        guard lastCallerID != results.last?.id else {
-            return
-        }
-        lastCallerID = results.last?.id ?? 0
         model.loadMore(query)
     }
 }

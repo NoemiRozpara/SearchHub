@@ -105,6 +105,7 @@ class SearchModel: ObservableObject {
                             totalResults: response.totalCount,
                             perPage: self.searchService.resultsPerPage
                         )
+                        self.hasMoreResults = self.currentPage < self.totalPages
                     }
                 }
             ).store(in: &cancellables)
