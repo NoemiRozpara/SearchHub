@@ -29,9 +29,16 @@ final class SearchViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        self.navigationController!.navigationBar.isHidden = true
+//        layout
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationController!.navigationBar.isHidden = true
+        self.navigationController!.navigationBar.isHidden = true
+        
     }
     
     override func viewDidLoad() {

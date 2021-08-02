@@ -12,6 +12,9 @@ struct SearchResponseModel: Codable {
     var items: [Repository]
     
     var totalPages: Int {
-        Int.divideRoundUp(totalCount, items.count)
+        guard items.count > 0 else {
+            return 0
+        }
+        return Int.divideRoundUp(totalCount, items.count)
     }
 }
