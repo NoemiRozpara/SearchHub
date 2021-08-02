@@ -16,15 +16,17 @@ struct SearchResultView: View {
         VStack {
             HStack {
                 if result.owner.avatarUrl != nil {
-                    SHAsyncImage<Image>(
+                    SHAsyncImage<SHIcon>(
                         url: result.owner.avatarUrl!,
                         image: { Image(uiImage: $0).resizable() },
-                        placeholder: { Image(systemName: "person.fill") }
+                        placeholder: {
+                            SHIcon(name: "person.fill")
+                        }
                     )
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 40, height: 40)
                 } else {
-                    Image(systemName: "person.fill")
+                    SHIcon(name: "person.fill")
                 }
                
                 VStack {
@@ -58,15 +60,13 @@ struct SearchResultView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                result.language != nil
-                    ? ZStack {
-                        SHLabelWithIcon(
-                            text: result.language!,
-                            iconName: "gearshape.fill"
-                        )
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    : nil
+                ZStack {
+                    SHLabelWithIcon(
+                        text: result.language ?? "?",
+                        iconName: "gearshape.fill"
+                    )
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity)
         }

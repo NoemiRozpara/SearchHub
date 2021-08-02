@@ -77,6 +77,7 @@ class SearchViewModel: ObservableObject {
     }
     
     func search(_ query: String) {
+        model.resetSearch()
         model.search(query)
     }
     
