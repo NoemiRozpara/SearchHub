@@ -50,9 +50,7 @@ struct SHSearchField: View {
                             )
                             .padding(.leading, 8)
                         if isEditing && !query.wrappedValue.isEmpty {
-                            Button(action: {
-                                query.wrappedValue = ""
-                            }) {
+                            Button(action: clearQuery) {
                                 SHIcon(name: "multiply.circle.fill")
                                     .padding(.trailing, 8)
                             }
@@ -82,8 +80,11 @@ struct SHSearchField: View {
                 from: nil,
                 for: nil
             )
-        query.wrappedValue = ""
         isEditing = false
+    }
+    
+    private func clearQuery() {
+        query.wrappedValue = ""
         clearAction?()
     }
 }

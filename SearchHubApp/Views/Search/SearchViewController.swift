@@ -31,19 +31,8 @@ final class SearchViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.navigationController!.navigationBar.isHidden = true
-//        layout
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController!.navigationBar.isHidden = true
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
         displaySwiftUIView(self.contentView)
+        self.navigationController!.navigationBar.isHidden = true
     }
 }
