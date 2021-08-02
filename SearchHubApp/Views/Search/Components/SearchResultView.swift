@@ -15,11 +15,18 @@ struct SearchResultView: View {
     var body: some View {
         VStack {
             HStack {
-                SHURLImage(
-                    result.owner.avatarUrl,
-                    fallbackImageName: "person.fill"
-                )
-                .frame(width: 40, height: 40)
+                if result.owner.avatarUrl != nil {
+                    SHAsyncImage<Image>(
+                        url: result.owner.avatarUrl!,
+                        image: { Image(uiImage: $0).resizable() },
+                        placeholder: { Image(systemName: "person.fill") }
+                    )
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40, height: 40)
+                } else {
+                    Image(systemName: "person.fill")
+                }
+               
                 VStack {
                     Text(result.fullName)
                         .frame(maxWidth: .infinity, alignment: .leading)

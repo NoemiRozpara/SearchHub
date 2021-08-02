@@ -33,7 +33,8 @@ struct SearchContentView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack {
                         ForEach(viewModel.results, id: \.id) { result in
-                            makeSearchResult(using: result).id(UUID())
+                            makeSearchResult(using: result)
+                                .id(result.id)
                         }
                         if viewModel.isLoading {
                             ProgressView()
