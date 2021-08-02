@@ -66,7 +66,7 @@ struct SearchResultView: View {
             .frame(maxWidth: .infinity)
         }
         .padding()
-        .background(Color(hex: "efefef"))
+        .background(Color(.systemGray6))
         
     }
 }
