@@ -34,7 +34,12 @@ extension SearchService: SearchServiceProtocol {
 private extension SearchService {
     func executeSearch(query: String, page: Int = 1) -> AnyPublisher<SearchEndpoint.Response, Error> {
         do {
-            let request = try SearchEndpoint.makeRequest(using: ["query" : query])
+            let request = try SearchEndpoint.makeRequest(
+                using: [
+                    "query" : query,
+                    "page": page
+                ]
+            )
             return session.dataTaskPublisher(for: request)
                 .tryMap { (data, response) in
                     try SearchEndpoint.validate(data, response)
