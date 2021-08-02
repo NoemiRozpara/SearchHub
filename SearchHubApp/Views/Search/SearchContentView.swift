@@ -39,6 +39,7 @@ struct SearchContentView: View {
                             ProgressView()
                         } else {
                             Text(viewModel.resultsCountMessage)
+                                .foregroundColor(theme.colorPalette.primaryText)
                                 .font(.caption)
                             viewModel.hasMoreResults
                                 ? SHButton(
@@ -50,6 +51,9 @@ struct SearchContentView: View {
                         }
                     }
                 }
+            } else if viewModel.isLoading {
+                ProgressView()
+                    .frame(maxHeight: .infinity)
             } else if viewModel.error != nil {
                 ErrorView(label: viewModel.error!)
                     .frame(maxHeight: .infinity)

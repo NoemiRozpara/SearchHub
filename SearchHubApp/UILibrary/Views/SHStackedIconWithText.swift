@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SHStackedIconWithText: View {
+    @EnvironmentObject var theme: Theme
+    
     let label: String
     let iconName: String
     let color: Color?
@@ -29,6 +31,7 @@ struct SHStackedIconWithText: View {
                 .frame(height: 20)
             Text(label)
                 .font(.caption)
+                .foregroundColor(theme.colorPalette.primaryText)
                 .multilineTextAlignment(.center)
         }
         

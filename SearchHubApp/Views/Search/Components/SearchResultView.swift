@@ -15,7 +15,6 @@ struct SearchResultView: View {
     var body: some View {
         VStack {
             HStack {
-                
                 SHURLImage(
                     result.owner.avatarUrl,
                     fallbackImageName: "person.fill"
@@ -35,7 +34,6 @@ struct SearchResultView: View {
                 Spacer()
                 SHIcon(name: "chevron.right")
             }
-            
             HStack {
                 ZStack {
                     SHLabelWithIcon(
@@ -66,7 +64,7 @@ struct SearchResultView: View {
             .frame(maxWidth: .infinity)
         }
         .padding()
-        .background(Color(.systemGray6))
+        .background(theme.colorPalette.secondaryBackground)
         
     }
 }

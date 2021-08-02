@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct SHSearchField: View {
-    var query: Binding<String>
+    @EnvironmentObject var theme: Theme
     
     @State private var isEditing = false
     
     private let executeSearch: ((String) -> Void)?
     
     private let clearAction: (() -> Void)?
+    
+    var query: Binding<String>
     
     init(
         query: Binding<String>,
@@ -38,7 +40,7 @@ struct SHSearchField: View {
                 })
                 .padding(7)
                 .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
+                .background(theme.colorPalette.secondaryBackground)
                 .cornerRadius(8)
                 .overlay(
                     HStack {
@@ -65,6 +67,7 @@ struct SHSearchField: View {
             if isEditing {
                 Button(action: clearQueryAndResign) {
                     Text("Cancel")
+                        .foregroundColor(theme.colorPalette.primaryText)
                 }
                 .padding(.vertical, 0)
                 .padding(.trailing, 10)

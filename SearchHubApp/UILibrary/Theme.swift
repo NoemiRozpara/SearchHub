@@ -15,17 +15,21 @@ public class Theme: ObservableObject {
         public private(set) var secondaryText: Color
         
         public private(set) var background: Color
+        public private(set) var secondaryBackground: Color
+        
         public private(set) var accent: Color
         
         public init(
             primaryText: Color = Color(hex: "000"),
             secondaryText: Color = Color(hex: "fff"),
             background: Color = Color(hex: "26547c"),
+            secondaryBackground: Color = Color(.systemGray6),
             accent: Color = Color(hex: "06d6a0")
         ) {
             self.primaryText = primaryText
             self.secondaryText = secondaryText
             self.background = background
+            self.secondaryBackground = secondaryBackground
             self.accent = accent
         }
     }
